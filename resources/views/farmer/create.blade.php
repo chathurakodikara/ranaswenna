@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
 
-        <h3 class="font-bold text-gray-800 text-3xl flex-100 ">New Farmer</h3>
+        
 
     </x-slot>
 
     <div class="px-64 py-10">
         <div class=" container mx-auto ">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
-
+            <h3 class="font-bold text-gray-800 text-3xl flex-100 ">New Farmer</h3>
 
                 <form class="">
                     <div class="flex flex-wrap -mx-3 mb-6">

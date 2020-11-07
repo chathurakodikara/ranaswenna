@@ -36,6 +36,10 @@ Route::get('/create', function (){
 Route::get('/myshop' , function(){
     return view('myshop.index');
 });
+//my shop- Edit
+Route::get('/editshop' , function(){
+    return view('myshop.edit');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
