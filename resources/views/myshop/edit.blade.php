@@ -22,14 +22,12 @@
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
 
                             <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
-                                class=" transition  focus:border-transparent p-2  appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                class="form-input w-full">
 
                         </div>
 
                         <div class="w-full md:w-1/2 px-3">
-                            <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-farmer-name" type=" text">
+                            <input class="form-input w-full" id="grid-farmer-name" type="text">
                         </div>
                     </div>
 
@@ -39,9 +37,7 @@
                                 Product Category
                             </label>
                             <div class="relative">
-                                <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    id="grid-product-category">
+                                <select class="form-input w-full" id="grid-product-category">
                                     <option>-Select-</option>
                                     <option>Missouri</option>
                                     <option>Texas</option>
@@ -63,9 +59,7 @@
                                 Product Title
                             </label>
                             <div class="relative">
-                                <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    id="grid-product-title">
+                                <select class="form-input w-full" id="grid-product-title">
                                     <option>-Select-</option>
                                     <option>Missouri</option>
                                     <option>Texas</option>
@@ -89,9 +83,8 @@
                                 <span class="text-gray-700 text-sm font-bold mb-2" for="grid-production-description">
                                     Product Description
                                 </span>
-                                <textarea
-                                    class="form-textarea mt-1 block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    id="grid-production-description" type="text" rows="3" "></textarea>
+                                <textarea class="form-input w-full" id="grid-production-description" type="text"
+                                    rows="3"></textarea>
                             </label>
                         </div>
                     </div>
@@ -107,9 +100,7 @@
                                 for="grid-unit">
                                 Unit
                             </label>
-                            <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-unit" type="text" >
+                            <input class="form-input w-full" id="grid-unit" type="text">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -117,9 +108,7 @@
                                 for="grid-selling-qty">
                                 Selling QTY
                             </label>
-                            <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-selling-qty" type="text" >
+                            <input class="form-input w-full" id="grid-selling-qty" type="text">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -127,9 +116,7 @@
                                 for="grid-selling-price">
                                 Selling Price per unit
                             </label>
-                            <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-selling-price" type="text" >
+                            <input class="form-input w-full" id="grid-selling-price" type="text">
                         </div>
                     </div>
 
@@ -151,20 +138,21 @@
 
                     <div class="flex mt-10">
                         <button
-                                class="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-3 border-b-4 border-red-700 hover:border-red-500 rounded inline-flex items-center ">
+                            class="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-3 border-b-4 border-red-700 hover:border-red-500 rounded inline-flex items-center ">
                             Delete
                         </button>
+                        
                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1
                                  px-3 border border-blue-500 hover:border-transparent rounded
                                  inline-flex items-center ml-2 ">
                             New
                         </button>
 
-
                         <button
                             class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full inline-flex items-center ml-2">
                             Create Farmer
                         </button>
+                        
                     </div>
 
                 </form>

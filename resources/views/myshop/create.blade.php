@@ -22,13 +22,13 @@
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
 
                             <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
-                                class=" transition  focus:border-transparent p-2  appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                class=" form-input w-full">
 
                         </div>
 
                         <div class="w-full md:w-1/2 px-3">
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                class="form-input w-full"
                                 id="grid-farmer-name" type=" text">
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    class="form-input w-full"
                                     id="grid-product-category">
                                     <option>-Select-</option>
                                     <option>Missouri</option>
@@ -64,7 +64,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    class="form-input w-full"
                                     id="grid-product-title">
                                     <option>-Select-</option>
                                     <option>Missouri</option>
@@ -90,7 +90,7 @@
                                     Product Description
                                 </span>
                                 <textarea
-                                    class="form-textarea mt-1 block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    class="form-input w-full"
                                     id="grid-production-description" type="text" rows="3"
                                     placeholder="Enter Product Description."></textarea>
                             </label>
@@ -109,7 +109,7 @@
                                 Unit
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                class="form-input w-full"
                                 id="grid-unit" type="text" placeholder="Kg">
                         </div>
 
@@ -119,7 +119,7 @@
                                 Selling QTY
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                class="form-input w-full"
                                 id="grid-selling-qty" type="text" placeholder="Mobile Number">
                         </div>
 
@@ -129,7 +129,7 @@
                                 Selling Price per unit
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                class="form-input w-full"
                                 id="grid-selling-price" type="text" placeholder="Rs">
                         </div>
                     </div>
