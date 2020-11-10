@@ -7,9 +7,9 @@
     <div class="px-64 py-10">
         <div class=" container mx-auto">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
-        <h3 class=" font-bold text-gray-800 text-3xl flex-100">Add products to market Place</h3>
+                <h3 class=" font-bold text-gray-800 text-3xl flex-100">Update Published products</h3>
                 <form>
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap -mx-3 mb-6 mt-5">
                         <div class="w-full px-3">
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-Farmer-nic">
                                 Farmer's Nic
@@ -91,12 +91,11 @@
                                 </span>
                                 <textarea
                                     class="form-textarea mt-1 block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    id="grid-production-description" type="text" rows="3"
-                                    placeholder="Enter Product Description."></textarea>
+                                    id="grid-production-description" type="text" rows="3" "></textarea>
                             </label>
                         </div>
                     </div>
-                    <div class="flex mt-2">
+                    <div class=" flex mt-2">
                         <h3 class="text-gray-700 text-xs font-bold mb-2">
                             Product Description
                         </h3>
@@ -110,7 +109,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-unit" type="text" placeholder="Kg">
+                                id="grid-unit" type="text" >
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -120,7 +119,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-selling-qty" type="text" placeholder="Mobile Number">
+                                id="grid-selling-qty" type="text" >
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -130,7 +129,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-selling-price" type="text" placeholder="Rs">
+                                id="grid-selling-price" type="text" >
                         </div>
                     </div>
 
@@ -151,9 +150,13 @@
 
 
                     <div class="flex mt-10">
+                        <button
+                                class="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-3 border-b-4 border-red-700 hover:border-red-500 rounded inline-flex items-center ">
+                            Delete
+                        </button>
                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1
                                  px-3 border border-blue-500 hover:border-transparent rounded
-                                 inline-flex items-center ">
+                                 inline-flex items-center ml-2 ">
                             New
                         </button>
 

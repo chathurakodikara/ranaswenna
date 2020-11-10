@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
 
-        
+
 
     </x-slot>
 
@@ -19,7 +19,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-farmer-nic" type="text" >
+                                id="grid-farmer-nic" type="text">
                         </div>
 
                         <div class="w-full md:w-1/2 px-3">
@@ -32,34 +32,33 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3">
-                            <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-business-name">
-                                Business Name
+                    <div class=" flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-business-name">
+                                    Business Name
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="grid-business-name" type="text">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block">
+                                    <span class="text-gray-700 text-sm font-bold mb-2" for="grid-about-farmer">
+                                        About Farmer
+                                    </span>
+                                    <textarea
+                                        class="form-textarea mt-1 block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="grid-about-farmer" type="text" rows="3" "></textarea>
                             </label>
-                            <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-business-name" type="text" >
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3">
-                            <label class="block">
-                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-about-farmer">
-                                    About Farmer
-                                </span>
-                                <textarea
-                                    class="form-textarea mt-1 block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    id="grid-about-farmer" type="text" rows="3"
-                                    "></textarea>
-                            </label>
-                        </div>
-                    </div>
 
 
-
-                    <div class="flex flex-wrap -mx-3 mb-2">
+                    <div class=" flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2"
                                 for="grid-Distict">
@@ -185,25 +184,28 @@
                             <textarea
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="grid-address" type="text" "></textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    
-                    <div class="bg-gray-100 overflow-hidden shadow-xl sm:rounded-lg p-2 ">
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3">
-                            <button
-                                class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1
+
+                        <div class="bg-gray-100 overflow-hidden shadow-xl sm:rounded-lg p-2 ">
+                            <div class="flex flex-wrap -mx-3 mb-6">
+                                <div class="w-full px-3">
+                                    <button
+                                        class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+                                        Delete
+                                    </button>
+                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1
                                  px-3 border border-blue-500 hover:border-transparent rounded">
-                                New
-                            </button>
-                            <button
-                                class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full">
-                                Create Farmer
-                            </button>
+                                        New
+                                    </button>
+                                    <button
+                                        class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full">
+                                        Create Farmer
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
 
 
                 </form>
