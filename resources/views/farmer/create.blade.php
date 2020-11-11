@@ -10,20 +10,45 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
                 <h3 class="font-bold text-gray-800 text-3xl flex-100 ">New Farmer</h3>
 
-                <form class="">
+
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                <form method="POST" action="/farmers">
+                    @csrf
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class=" text-gray-700 textsm font-bold mb-2" for="grid-Farmer-nic">
                                 Farmer Nic
                             </label>
-                            <input class=" form-input w-full" id="grid-farmer-nic" type="text" placeholder="NIC Number">
+                            <input class=" form-input w-full" id="grid-farmer-nic" name="nic" type="text"
+                                placeholder="NIC Number">
                         </div>
 
                         <div class="w-full md:w-1/2 px-3">
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-full-name">
                                 Full Name
                             </label>
-                            <input class="form-input w-full" id="grid-full-name" type="text" placeholder="Full Name">
+                            <input class="form-input w-full" id="grid-full-name" name="name" type="text"
+                                placeholder="Full Name">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class=" text-gray-700 textsm font-bold mb-2" for="grid-birthday">
+                                Birthday
+                            </label>
+                            <input class=" form-input w-full" id="grid-birthday" name="birthday" type="text"
+                                placeholder="Birthday">
                         </div>
                     </div>
 
@@ -32,7 +57,7 @@
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-business-name">
                                 Business Name
                             </label>
-                            <input class="form-input w-full" id="grid-business-name" type="text"
+                            <input class="form-input w-full" id="grid-business-name" name="business_name" type="text"
                                 placeholder="Business Name">
                         </div>
                     </div>
@@ -43,8 +68,8 @@
                                 <span class="text-gray-700 text-sm font-bold mb-2" for="grid-about-farmer">
                                     About Farmer
                                 </span>
-                                <textarea class="form-input w-full" id="grid-about-farmer" type="text" rows="3"
-                                    placeholder="Enter About Farmer."></textarea>
+                                <textarea class="form-input w-full" id="grid-about-farmer" name="about" type="text"
+                                    rows="3" placeholder="Enter About Farmer."></textarea>
                             </label>
                         </div>
                     </div>
@@ -54,10 +79,10 @@
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Distict">
-                                Distict
+                                District
                             </label>
                             <div class="relative">
-                                <select class="form-input w-full" id="grid-Distict">
+                                <select class="form-input w-full" id="grid-Distict" name="district">
                                     <option>-Select-</option>
                                     <option>Ampara</option>
                                     <option>Anuradhapura</option>
@@ -102,10 +127,10 @@
                                 ASC Division
                             </label>
                             <div class="relative">
-                                <select class="form-input w-full" id="grid-ASC-division">
+                                <select class="form-input w-full" id="grid-ASC-division" name="asc_id">
                                     <option>-Select-</option>
-                                    <option>Missouri</option>
-                                    <option>Texas</option>
+                                    <option value="2">Missouri</option>
+                                    <option value="3">225541</option>
                                 </select>
 
                                 <div
@@ -123,7 +148,8 @@
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-gs-aria">
                                 GS Aria
                             </label>
-                            <input class="form-input w-full" id="grid-gs-aria" type="text" placeholder="GS-Aria">
+                            <input class="form-input w-full" id="grid-gs-aria" name="gs_id" type="text"
+                                placeholder="GS-Aria">
                         </div>
                     </div>
 
@@ -133,21 +159,23 @@
                                 Telephone
                             </label>
                             <input class="form-input w-full" id="grid-Telephone" type="text"
-                                placeholder="Telephone Number">
+                                placeholder="Telephone Number" name="telephone_1">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Mobile">
                                 Mobile
                             </label>
-                            <input class="form-input w-full" id="grid-Mobile" type="text" placeholder="Mobile Number">
+                            <input class="form-input w-full" id="grid-Mobile" type="text" name="telephone_2"
+                                placeholder="Mobile Number">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Email">
                                 Email
                             </label>
-                            <input class="form-input w-full" id="grid-Email" type="text" placeholder="Email Address">
+                            <input class="form-input w-full" id="grid-Email" type="text" name="email"
+                                placeholder="Email Address">
                         </div>
                     </div>
 
@@ -157,7 +185,7 @@
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-address">
                                 Address
                             </label>
-                            <textarea class="form-input w-full" id="grid-address" type="text"
+                            <textarea class="form-input w-full" id="grid-address" name="address" type="text"
                                 placeholder="Enter Your Address."></textarea>
                         </div>
                     </div>
@@ -168,8 +196,8 @@
                                 class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded">
                                 New
                             </button>
-                            <button
-                                class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full">
+                            <button class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full"
+                                type="submit">
                                 Create Farmer
                             </button>
                         </div>

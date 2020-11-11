@@ -9,22 +9,46 @@
         <div class=" container mx-auto ">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
 
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
-                <form class="">
+                <form action="{{ route('farmers.update',$farmer) }}" method="POST">
+                    @csrf
+                    @method('put')
+
                     <h3 class="font-bold text-gray-800 text-3xl flex-100 ">Farmer infomation Update</h3>
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-Farmer-nic">
                                 Farmer Nic
                             </label>
-                            <input class="form-input w-full" id="grid-farmer-nic" type="text">
+                            <input class="form-input w-full" id="grid-farmer-nic" name="nic" type="text"
+                                value="{{$farmer->nic}}">
                         </div>
 
                         <div class="w-full md:w-1/2 px-3">
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-full-name">
                                 Full Name
                             </label>
-                            <input class="form-input w-full" id="grid-full-name" type="text">
+                            <input class="form-input w-full" id="grid-full-name" name="name" type="text"
+                                value="{{$farmer->name}}">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class=" text-gray-700 textsm font-bold mb-2" for="grid-birthday">
+                                Birthday
+                            </label>
+                            <input class=" form-input w-full" id="grid-birthday" name="birthday" type="text"
+                                value="{{$farmer->birthday}}">
                         </div>
                     </div>
 
@@ -33,7 +57,7 @@
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-business-name">
                                 Business Name
                             </label>
-                            <input class="form-input w-full" id="grid-business-name" type="text">
+                            <input class="form-input w-full" id="grid-business-name" name="business_name" type="text" value="{{$farmer->business_name}}">
                         </div>
                     </div>
 
@@ -43,8 +67,8 @@
                                 <span class="text-gray-700 text-sm font-bold mb-2" for="grid-about-farmer">
                                     About Farmer
                                 </span>
-                                <textarea class="form-input w-full" id="grid-about-farmer" type="text"
-                                    rows="3"></textarea>
+                                <textarea class="form-input w-full" id="grid-about-farmer" name="about"
+                                    value="{{$farmer->about}}" type="text" rows="3"></textarea>
                             </label>
                         </div>
                     </div>
@@ -54,10 +78,10 @@
                     <div class=" flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Distict">
-                                Distict
+                                District
                             </label>
                             <div class="relative">
-                                <select class="form-input w-full" id="grid-Distict">
+                                <select class="form-input w-full" id="grid-Distict" name="district" value="">
                                     <option>-Select-</option>
                                     <option>Ampara</option>
                                     <option>Anuradhapura</option>
@@ -102,10 +126,11 @@
                                 ASC Division
                             </label>
                             <div class="relative">
-                                <select class="form-input w-full" id="grid-ASC-division">
+                                <select class="form-input w-full" id="grid-ASC-division" name="asc_id"
+                                    value="{{$farmer->asc_id}}">
                                     <option>-Select-</option>
-                                    <option>Missouri</option>
-                                    <option>Texas</option>
+                                    <option value="2">Missouri</option>
+                                    <option value="3">Texas</option>
                                 </select>
 
                                 <div
@@ -123,7 +148,8 @@
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-gs-aria">
                                 GS Aria
                             </label>
-                            <input class="form-input w-full" id="grid-gs-aria" type="text">
+                            <input class="form-input w-full" id="grid-gs-aria" name="gs_id" type="text"
+                                value="{{$farmer->gs_id}}">
                         </div>
                     </div>
 
@@ -132,21 +158,24 @@
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Telephone">
                                 Telephone
                             </label>
-                            <input class="form-input w-full" id="grid-Telephone" type="text">
+                            <input class="form-input w-full" id="grid-Telephone" type="text" name="telephone_1"
+                                value="{{$farmer->telephone_1}}">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Mobile">
                                 Mobile
                             </label>
-                            <input class="form-input w-full" id="grid-Mobile" type="text">
+                            <input class="form-input w-full" id="grid-Mobile" type="text" name="telephone_2"
+                                value="{{$farmer->telephone_2}}">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-Email">
                                 Email
                             </label>
-                            <input class="form-input w-full" id="grid-Email" type="text">
+                            <input class="form-input w-full" id="grid-Email" type="text" name="email"
+                                value="{{$farmer->email}}">
                         </div>
                     </div>
 
@@ -156,7 +185,8 @@
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-address">
                                 Address
                             </label>
-                            <textarea class="form-input w-full" id="grid-address" type="text"></textarea>
+                            <textarea class="form-input w-full" id="grid-address" type="text" name="address"
+                                value="{{$farmer->address}}"></textarea>
                         </div>
                     </div>
 
@@ -170,7 +200,8 @@
                                  px-3 border border-blue-500 hover:border-transparent rounded">
                         New
                     </button>
-                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full"
+                        type="submit">
                         Create Farmer
                     </button>
 

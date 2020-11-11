@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        
+
 
     </x-slot>
 
@@ -15,8 +15,8 @@
                             Farmers List
                         </h3>
 
-                        <button
-                            class="inline-flex items-center ml-15 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">New</button>
+                        <a href="{{ route('farmers.create') }}"
+                            class="inline-flex items-center ml-15 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">New</a>
                     </div>
 
                     <!-- component -->
@@ -79,87 +79,53 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
+                                    @foreach($farmers as $farmer)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                             <div class="flex items-center">
                                                 <div>
-                                                    <div class="text-sm leading-5 text-gray-800">#1</div>
+                                                    <div class="text-sm leading-5 text-gray-800">
+                                                        {{$farmer->id}}</div>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="text-sm leading-5 text-blue-900">703373631V</div>
+                                            <div class="text-sm leading-5 text-blue-900"> {{$farmer->nic}}
+                                            </div>
                                         </td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            K A KARUNARATHNA</td>
+                                            {{$farmer->name}}</td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            Kibissa</td>
+                                            {{$farmer->asc_id}}</td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            PALUTAWA</td>
+                                            {{$farmer->gs_id}}</td>
                                         </td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            0713023691</td>
+                                            {{$farmer->telephone_1}}</td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            0713023691</td>
+                                            {{$farmer->telephone_2}}</td>
                                         <td
                                             class="px-8 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                             <button
                                                 class="px-2 py-1 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">
                                                 View</button>
-                                            <button
-                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">
-                                                Edit</button>
 
+                                            <a href="{{ route('farmers.edit',$farmer) }}"
+                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">
+                                                Edit</a>
 
                                         </td>
                                     </tr>
+                                    @endforeach
 
 
 
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="flex items-center">
-                                                <div>
-                                                    <div class="text-sm leading-5 text-gray-800">#1</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="text-sm leading-5 text-blue-900">703373631V</div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            K A KARUNARATHNA</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            Kibissa</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            PALUTAWA</td>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            0713023691</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            0713023691</td>
-                                        <td
-                                            class="px-8 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                            <button
-                                                class="px-2 py-1 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">
-                                                View</button>
-                                            <button
-                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">
-                                                Edit</button>
 
-
-                                        </td>
-                                    </tr>
 
                                 </tbody>
                             </table>
