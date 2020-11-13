@@ -7,7 +7,9 @@
         <div class=" container  flex flex-wrap  ">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4 w-1/3   ">
 
-                <form class="">
+                <form method="POST" action="/category">
+
+                    @csrf
                     <div class="flex flex-wrap -mx-3 mb-4">
                         <div class="w-full px-3">
                             <label class="text-gray-700 text-base font-bold mb-2 border-b ">New Categories</label>
@@ -16,10 +18,10 @@
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full px-3">
                             <label class="block">
-                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-in-english">
+                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-name">
                                     Category in English
                                 </span>
-                                <input class="form-input w-full" id="grid-category-english" type="text"
+                                <input class="form-input w-full" id="grid-name" type="text" name="name"
                                     placeholder="In English">
                             </label>
                         </div>
@@ -28,10 +30,10 @@
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full px-3">
                             <label class="block">
-                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-in-sinhala">
+                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-name_si">
                                     Category in Sinhala
                                 </span>
-                                <input class="form-input w-full" id="grid-category-sinhala" type="text"
+                                <input class="form-input w-full" id="grid-name_si" type="text" name="name_si"
                                     placeholder="In Sinhala">
                             </label>
                         </div>
@@ -40,17 +42,30 @@
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full px-3">
                             <label class="block">
-                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-in-tamil">
+                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-name_ta">
                                     Category in Tamil
                                 </span>
-                                <input class="form-input w-full" id="grid-category-tamil" type="text"
+                                <input class="form-input w-full" id="grid-name_ta" type="text" name="name_ta"
                                     placeholder="In Tamil">
                             </label>
                         </div>
                     </div>
 
+                    <div class="flex flex-wrap -mx-3 mb-2">
+                        <div class="w-full px-3">
+                            <label class="block">
+                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-img">
+                                    Category image URL
+                                </span>
+                                <input class="form-input w-full" id="grid-img" type="text"
+                                    placeholder="Category image URL">
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="flex flex-wrap -mx-0 mb-2">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2  rounded-full">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2  rounded-full"
+                            type="submit">
                             Submit
                         </button>
                     </div>
@@ -61,7 +76,7 @@
 
             <!-- New Product Title-Panal -->
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4 w-2/3  ">
-                <form class="">
+                <form method=" " action=" ">
                     <div class="flex flex-wrap -mx-3 mb-4">
                         <div class="w-full px-3">
                             <label class="text-gray-700 text-base font-bold mb-2 border-b ">New Product Title</label>
@@ -70,11 +85,10 @@
 
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-product-category">
+                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-category_id">
                                 Product Category
                                 <div class="relative">
-                                    <select class="form-input w-full" id="grid-product">
+                                    <select class="form-input w-full" id="grid-category_id" name="category_id">
                                         <option>-Select-</option>
                                         <option>Missouri</option>
                                         <option>Texas</option>
@@ -92,37 +106,37 @@
                         </div>
 
                         <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-image">
+                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-img">
                                 Product image URL
                             </label>
-                            <input class="form-input w-full" id="grid-image-url" type="text"
+                            <input class="form-input w-full" id="grid-img" type="text" name="img"
                                 placeholder="Product Image URL">
                         </div>
                     </div>
 
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-title-in-english" >
+                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-name">
                                 Title in English
                             </label>
-                            <input class="form-input w-full" id="grid-title-english" type="text" placeholder="In English">
+                            <input class="form-input w-full" id="grid-name" type="text" name="name"
+                                placeholder="In English">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-title-in-sinhala" >
+                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-name_si">
                                 Title in Sinhala
                             </label>
-                            <input class="form-input w-full" id="grid-title-sinhala" type="text" placeholder="In Sinhala">
+                            <input class="form-input w-full" id="grid-name_si" type="text" name="name_si"
+                                placeholder="In Sinhala">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-title-in-tamil">
+                            <label class=" tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-name_ta">
                                 Title in Tamil
                             </label>
-                            <input class="form-input w-full" id="grid-title-tamil" type="text" placeholder="In Tamil">
+                            <input class="form-input w-full" id="grid-name_ta" type="text" name="name_ta"
+                                placeholder="In Tamil">
                         </div>
                     </div>
 
@@ -131,13 +145,14 @@
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-keyword">
                                 Keywords
                             </label>
-                            <textarea class="form-input w-full" id="grid-keywords" type="text"
+                            <textarea class="form-input w-full" id="grid-keywords" type="text" name="keywords"
                                 placeholder="Keywords"></textarea>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap -mx-0 mb-2">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2  rounded-full">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2  rounded-full"
+                            type="submit">
                             Submit
                         </button>
                 </form>
@@ -185,8 +200,9 @@
 
                                 <td
                                     class="px-4 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                    <button
-                                        class="px-3 py-1 bg-gray-500 hover:bg-gray-700 text-white font-bold  rounded">Edit</button>
+
+                                    <a href=" "
+                                        class="px-3 py-1 bg-gray-500 hover:bg-gray-700 text-white font-bold  rounded">Edit</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -270,8 +286,10 @@
                                         September 12</td>
                                     <td
                                         class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                        <button
-                                            class="px-3 py-1  bg-gray-500 hover:bg-gray-700 text-white font-bold  rounded">Edit</button>
+
+
+                                        <a href=" "
+                                            class="px-3 py-1 bg-gray-500 hover:bg-gray-700 text-white font-bold  rounded">Edit</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -333,6 +351,8 @@
                     </div>
 
                 </form>
+
+
             </div>
             <!-- End Product Titles-Panal -->
 

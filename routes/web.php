@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FarmerController;
+use App\Http\Controllers\CategoryController;
+use App\HTTP\Controllers\ProductsController;
 
 
 
@@ -11,29 +13,11 @@ Route::get('/', function () {
 //farmer Deails
 
 Route::resource('/farmers', FarmerController::class );
-//farmer Registration
 
+Route::resource('/myshop' , ProductsController::class);
 
- 
-//farmer Edit
-
-
-//my shop- Add products to market Place
-Route::get('/create', function (){
-    return view('myshop.create');
-});
-//my shop- index
-Route::get('/myshop' , function(){
-    return view('myshop.index');
-});
-//my shop- Edit
-Route::get('/editshop' , function(){
-    return view('myshop.edit');
-});
 //categories- create
-Route::get('/cate' , function(){
-    return view('categories.create');
-});
+Route::resource('/category' , CategoryController::class );
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
