@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FarmerController;
 
 
 
@@ -8,17 +9,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 //farmer Deails
-Route::get('/farmer',function (){
-    return view ('farmer.index');
-});
+
+Route::resource('/farmers', FarmerController::class );
 //farmer Registration
-Route::get('/new' , function (){
-    return view('farmer.create');
-});
+
+
+ 
 //farmer Edit
-Route::get('/edit' , function(){
-    return view('Farmer.edit');
-});
+
+
 //my shop- Add products to market Place
 Route::get('/create', function (){
     return view('myshop.create');
