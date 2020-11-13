@@ -16,6 +16,9 @@
                         {{ __('Ran Aswenna') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('My Shop') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Farmers') }}
                     </x-jet-nav-link>
                 </div>

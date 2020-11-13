@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +15,8 @@ class ProductsController extends Controller
     public function index()
     {
         //
+        $data= products::all();
+        return view('myshop.index',['myshops'=>$data]);
     }
 
     /**
@@ -25,6 +27,7 @@ class ProductsController extends Controller
     public function create()
     {
         //
+        return view('myshop.create');
     }
 
     /**

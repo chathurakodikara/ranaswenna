@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,6 +36,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -47,6 +48,7 @@ class CategoryController extends Controller
     public function show(category $category)
     {
         //
+
     }
 
     /**

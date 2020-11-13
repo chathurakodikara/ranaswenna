@@ -8,7 +8,8 @@
         <div class=" container mx-auto">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
                 <h3 class=" font-bold text-gray-800 text-3xl flex-100">Update Published products</h3>
-                <form>
+                
+                <form method=" " action=" ">
                     <div class="flex flex-wrap -mx-3 mb-6 mt-5">
                         <div class="w-full px-3">
                             <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-Farmer-nic">
@@ -80,11 +81,11 @@
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
                             <label class="block">
-                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-production-description">
+                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-description">
                                     Product Description
                                 </span>
-                                <textarea class="form-input w-full" id="grid-production-description" type="text"
-                                    rows="3"></textarea>
+                                <textarea class="form-input w-full" id="grid-description" type="text" rows="3"
+                                    name="description"></textarea>
                             </label>
                         </div>
                     </div>
@@ -100,36 +101,36 @@
                                 for="grid-unit">
                                 Unit
                             </label>
-                            <input class="form-input w-full" id="grid-unit" type="text">
+                            <input class="form-input w-full" id="grid-unit" type="text" name="unit">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-selling-qty">
+                                for="grid-qty">
                                 Selling QTY
                             </label>
-                            <input class="form-input w-full" id="grid-selling-qty" type="text">
+                            <input class="form-input w-full" id="grid-qty" type="text" name="qty">
                         </div>
 
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-selling-price">
+                                for="grid-unit_price">
                                 Selling Price per unit
                             </label>
-                            <input class="form-input w-full" id="grid-selling-price" type="text">
+                            <input class="form-input w-full" id="grid-unit_price" type="text" name="unit_price">
                         </div>
                     </div>
 
                     <div class="flex mt-6">
                         <label class=" inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
+                            <input type="checkbox" class="form-checkbox" name="organic">
                             <span class="ml-2 text-gray-700 text-sm font-bold ">Organic product </span>
                         </label>
 
 
 
                         <label class="inline-flex items-center ml-15">
-                            <input type="checkbox" class="form-checkbox">
+                            <input type="checkbox" class="form-checkbox" name="transport">
                             <span class="ml-2 text-gray-700 text-sm font-bold">Transport Avalabe </span>
                         </label>
                     </div>
@@ -141,7 +142,7 @@
                             class="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-3 border-b-4 border-red-700 hover:border-red-500 rounded inline-flex items-center ">
                             Delete
                         </button>
-                        
+
                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1
                                  px-3 border border-blue-500 hover:border-transparent rounded
                                  inline-flex items-center ml-2 ">
@@ -149,10 +150,11 @@
                         </button>
 
                         <button
-                            class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full inline-flex items-center ml-2">
+                            class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full inline-flex items-center ml-2"
+                            type="submit">
                             Create Farmer
                         </button>
-                        
+
                     </div>
 
                 </form>

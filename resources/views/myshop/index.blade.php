@@ -2,7 +2,7 @@
     <x-slot name="header">
         
         
-
+ 
     </x-slot>
 
     <div class="px-54 py-10">
@@ -15,8 +15,8 @@
                         <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Post of Products
                         </h3>
 
-                        <button
-                            class="inline-flex items-center ml-15 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">new</button>
+                        <a href="{{ route('myshop.create')}}" class="inline-flex items-center ml-15 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">new <a>
+                        
                     </div>
 
                     <!-- component -->
@@ -76,30 +76,33 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
+                                    @foreach($myshops as $myshop)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                             <div class="flex items-center">
                                                 <div>
-                                                    <div class="text-sm leading-5 text-gray-800">#1</div>
+                                                    <div class="text-sm leading-5 text-gray-800">
+                                                    {{$myshop->id}}</div>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="text-sm leading-5 text-blue-900">වැටකොළු</div>
+                                            <div class="text-sm leading-5 text-blue-900">
+                                            {{$myshop->items_id}}<div>
                                         </td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            L SAMAN KUMARA</td>
+                                            {{$myshop->farmer_id}}</td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            SIYAMBALA WEWAKg300</td>
+                                            {{$myshop->qty}}</td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            /Kg300</td>
+                                            {{$myshop->unit_price}}</td>
                                         </td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            1 day ago</td>
+                                            {{$myshop->created_at}}</td>
                                         <td
                                             class="px-8 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                             <button
@@ -111,44 +114,11 @@
                                                 Delete</button>
                                         </td>
                                     </tr>
+                                    @endforeach
 
 
 
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="flex items-center">
-                                                <div>
-                                                    <div class="text-sm leading-5 text-gray-800">#1</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="text-sm leading-5 text-blue-900">වැටකොළු</div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            L SAMAN KUMARA</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            SIYAMBALA WEWAKg300</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            /Kg300</td>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            1 day ago</td>
-                                        <td
-                                            class="px-8 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                            <button
-                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">
-                                                Edit</button>
-
-                                            <button
-                                                class="px-2 py-1 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
-                                                Delete</button>
-                                        </td>
-                                    </tr>
+                                   
                                 </tbody>
                             </table>
                             <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
