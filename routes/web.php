@@ -23,4 +23,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/userlist',  function ()
+{
+       return view('admin.users.index');
+});
+
 
