@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\products;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -15,7 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         //
-        $data= products::all();
+        $data= product::all();
         return view('myshop.index',['myshops'=>$data]);
     }
 

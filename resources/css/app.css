@@ -1,3 +1,21 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+
+label {
+    @apply text-gray-600 font-bold mb-2 text-sm;
+}
+
+
+@tailwind components;
+
+.simple-table thead th {
+    @apply px-6 py-3 bg-gray-50 text-left text-sm font-bold leading-4  text-blue-500 uppercase tracking-wider;
+}
+
+.simple-table tbody td {
+    @apply px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900 bg-gray-100;
+}
+
+
+
+
+@tailwind utilities; 

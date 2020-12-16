@@ -17,15 +17,15 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('items_id');
             $table->unsignedBigInteger('farmer_id');
-            $table->string('description',100)->nullable();
+            $table->string('description')->nullable();
             $table->unsignedDecimal('qty',8,2);
             $table->unsignedDecimal('unit',8,2);
             $table->unsignedDecimal('unit_price',8,2)->nullable();
-            $table->boolean('transport');
-            $table->boolean('organic');
+            $table->boolean('transport')->nullable();
+            $table->boolean('organic')->nullable();
             $table->unsignedTinyInteger('asc_id');
             $table->unsignedTinyInteger('gs_id');
-            $table->string('status')->nullable();
+            $table->string('status', 12)->nullable();   
             $table->unsignedBigInteger('user_id');  
 
             $table->timestamps();

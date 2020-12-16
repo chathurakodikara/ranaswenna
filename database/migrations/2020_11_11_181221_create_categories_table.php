@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\Schema;
 class CreateCategoriesTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
+     * Run the migrations. 
+     * 
      * @return void
      */
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->tinyIncrements('id');
+            $table->tinyIncrements('id'); 
             $table->string('name',30)->unique();
             $table->string('name_si',30)->nullable();
             $table->string('name_ta',30)->nullable();

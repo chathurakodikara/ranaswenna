@@ -14,8 +14,8 @@ class CreateAscsTable extends Migration
     public function up()
     {
         Schema::create('ascs', function (Blueprint $table) {
-            $table->id();
-            $table->string('district',50)->unique();
+            $table->tinyIncrements('id');
+            $table->string('district',50);  
             $table->string('name',100)->unique();
             $table->timestamps();
         });

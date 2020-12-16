@@ -4,151 +4,103 @@
 
     </x-slot>
 
-    <div class="px-64 py-10">
-        <div class=" container mx-auto">
+    <div class="py-10">
+        <div class=" max-w-4xl mx-auto">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
-                <h3 class=" font-bold text-gray-800 text-3xl flex-100">Add products to market Place</h3>
-                <form method=" POST " action=" ">
+                <h3 class=" font-bold text-gray-800 text-3xl flex-100 mb-4 pb-2 border-b border-gray-200">Add products
+                    to market Place</h3>
+                <form method="POST" action=" ">
                     @csrf
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3">
-                            <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-Farmer-nic">
-                                Farmer's Nic
-                            </label>
+                    <div class="grid sm:grid-cols-3 grid-cols-1 gap-x-6 gap-y-3 mb-2">
+                        <div>
+                            <label for="nic">Farmer's Nic</label>
+                            <input id="searchfield" placeholder="Search..." autofocus="autofocus"
+                                class="form-input w-full" value="{{ old('searchfield') }}">
+                        <x-jet-input-error for="searchfield" />
+                        </div>
+                        <div class="col-span-2">
+                            <label>Full Name</label>
+                            <input
+                                class="form-input w-full bg-gray-100 focus:shadow-none focus:border-gray-100 border-gray-100"
+                                readonly value="{{ old('name') }}">
+                        <x-jet-input-error for="name" />
 
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-3 mb-2">
+                        <div>
+                            <label for="product_category">Product Category</label>
+                            <select class="form-select w-full" id="product_category">
+                            {{-- @if ( old('product_category') == )
+                                    
+                                    @endif --}}
 
-                            <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
-                                class=" form-input w-full">
+                                <option value="">-Select-</option>
+                                <option value="1">Missouri</option>
+                                <option value="2">Texas</option>
+                            </select>
+                            <x-jet-input-error for="product_category" />
 
                         </div>
 
-                        <div class="w-full md:w-1/2 px-3">
-                            <input class="form-input w-full" id="grid-farmer-name" type=" text">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                            <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-Product-category">
-                                Product Category
-                            </label>
-                            <div class="relative">
-                                <select class="form-input w-full" id="grid-product-category">
-                                    <option>-Select-</option>
-                                    <option>Missouri</option>
-                                    <option>Texas</option>
-                                </select>
-
-                                <div
-                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-                                        <path
-                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full md:w-1/2 px-3">
-                            <label class=" text-gray-700 text-sm font-bold mb-2" for="grid-product-title">
-                                Product Title
-                            </label>
-                            <div class="relative">
-                                <select class="form-input w-full" id="grid-product-title">
-                                    <option>-Select-</option>
-                                    <option>Missouri</option>
-                                    <option>Texas</option>
-                                </select>
-
-                                <div
-                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-                                        <path
-                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
-                            </div>
+                        <div>
+                            <label for="title_id">Item</label>
+                            <select class=" form-select w-full" id="title_id">
+                                <option value="0">-Select-</option>
+                                <option value="1">Missouri</option>
+                                <option value="2">Texas</option>
+                            </select>
+                            <x-jet-input-error for="title_id" />
                         </div>
                     </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3">
-                            <label class="block">
-                                <span class="text-gray-700 text-sm font-bold mb-2" for="grid-description">
-                                    Product Description
-                                </span>
-                                <textarea class="form-input w-full" id="grid-description" type="text" rows="3"
-                                    name="description" placeholder="Enter Product Description."></textarea>
-                            </label>
-                        </div>
+                    <div>
+                        <label for="description">Product Description </label>
+                        <textarea class=" form-textarea w-full" id="description" type="text" rows="3" name="description"
+                            placeholder="Enter Product Description.">{{ old('description') }}</textarea>
+                            <x-jet-input-error for="description" />
                     </div>
-                    <div class="flex mt-2">
-                        <h3 class="text-gray-700 text-xs font-bold mb-2">
-                            Product Description
-                        </h3>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-unit">
-                                Unit
-                            </label>
-                            <input class="form-input w-full" id="grid-unit" type="text" name="unit" placeholder="Kg">
+                    <div class="grid sm:grid-cols-3 grid-cols-1 gap-x-6 gap-y-3 mb-2">
+                        <div>
+                            <label for="unit">Unit</label>
+                            <select class="form-select w-full" id="unit" name="unit">
+                                <option value="Kg">Kg</option>
+                                <option value="">Units</option>
+                            </select>
+                            <x-jet-input-error for="unit" />
                         </div>
-
-                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-qty">
-                                Selling QTY
-                            </label>
-                            <input class="form-input w-full" id="grid-qty" type="text" name="qty"
-                                placeholder="Selling QTY">
+                        <div>
+                            <label for="qty">QTY</label>
+                            <input class="form-input w-full" id="qty" type="text" name="qty">
+                            <x-jet-input-error for="qty" />
                         </div>
-
-                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
-                                for="grid-unit_price">
-                                Selling Price per unit
-                            </label>
-                            <input class="form-input w-full" id="grid-unit_price" type="text" name="unit_price"
+                        <div>
+                            <label for="unit_price">Unit Price</label>
+                            <input class="form-input w-full" id="unit_price" type="text" name="unit_price"
                                 placeholder="Rs">
+                                <x-jet-input-error for="unit_price" />
                         </div>
                     </div>
+                    <div class="grid sm:grid-cols-3 grid-cols-1 gap-x-6 gap-y-3 mb-2 pt-2">
+                        <div>
+                            <label class="inline-flex items-cente">
+                                <input type="checkbox" class="form-checkbox h-6 w-6" name="organic">
+                                <span class="ml-2 text-gray-700 text-sm font-bold ">Organic product </span>
 
-                    <div class="flex mt-6">
-                        <label class=" inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox" name="organic">
-                            <span class="ml-2 text-gray-700 text-sm font-bold ">Organic product </span>
-                        </label>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="inline-flex items-cente">
+                                <input type="checkbox" class="form-checkbox h-6 w-6" name="transport">
+                                <span class="ml-2 text-gray-700 text-sm font-bold">Transport Avalabe </span>
+                            </label>
+                        </div>
+                        </div>
 
-
-
-                        <label class="inline-flex items-center ml-15">
-                            <input type="checkbox" class="form-checkbox" name="transport">
-                            <span class="ml-2 text-gray-700 text-sm font-bold">Transport Avalabe </span>
-                        </label>
-                    </div>
-
-
-
-                    <div class="flex mt-10">
-                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1
-                                 px-3 border border-blue-500 hover:border-transparent rounded
-                                 inline-flex items-center ">
-                            New
-                        </button>
-
-
+                    
+                    <div class=" flex w-full justify-end mt-6">
                         <button
-                            class="bg-green-500 hover:bg-green-700 text-white font-bold px-3 py-2  rounded-full inline-flex items-center ml-2"
+                            class=" bg-green-700 px-4 py-2 rounded focus:outline-none hover:bg-indigo-600 transition-colors duration-150 ease-in-out text-white font-bold leading-relaxed"
                             type="submit">
                             Create Farmer
                         </button>

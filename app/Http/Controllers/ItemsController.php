@@ -2,83 +2,76 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\items;
+use App\Models\item;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ItemsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $items = Item::all();
+        // $categories = Category::all();
+        return view('item.index',compact(['items']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+
+         $categories = Category::all();
+         return view('item.create',compact(['categories']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'category_id'=> 'required',
+            'name'=> 'required|min:1|max:30',
+            'name_si'=> 'nullable|max:30',
+            'name_ta'=> 'nullable|max:30',
+            'img'=> 'nullable|max:150',
+            'keywords'=> 'nullable|max:30',
+
+         ]);
+
+        $item = Item::create($request->all());
+        return redirect('/items');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\items  $items
-     * @return \Illuminate\Http\Response
-     */
-    public function show(items $items)
+
+    public function show(item $item)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\items  $items
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(items $items)
+    public function edit(item $item)
     {
-        //
+        $categories = Category::all();
+        return view('item.edit',compact('item','categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\items  $items
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, items $items)
+
+    public function update(Request $request, item $item)
     {
-        //
+        $request->validate([
+            'category_id'=> 'required',
+            'name'=> 'required|min:1|max:30',
+            'name_si'=> 'nullable|max:30',
+            'name_ta'=> 'nullable|max:30',
+            'img'=> 'nullable|max:150',
+            'keywords'=> 'nullable|max:30',
+
+         ]);
+
+         $item->fill($request->all())->save();
+         return redirect('/items')->with('success', 'item Updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\items  $items
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(items $items)
+
+    public function destroy(item $item)
     {
         //
     }
