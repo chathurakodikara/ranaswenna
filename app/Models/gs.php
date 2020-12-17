@@ -13,4 +13,8 @@ class gs extends Model
     {
         return $this->belongsTo('App\Models\Asc');
     }
+
+    public function Product(){
+        return $this->hasMany('App\Models\Product');
+    }
 }

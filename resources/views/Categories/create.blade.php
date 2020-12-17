@@ -1,5 +1,5 @@
 <x-app-layout>
-    
+
 
     <div class="py-10">
         <div class=" max-w-4xl mx-auto ">
@@ -9,45 +9,40 @@
                 <form method="POST" action="/categories">
                     @csrf
 
-                    <div class="flex flex-wrap  mb-2">
-                        <div class="w-full mb-2 px-3">
-                            <label for="name"> Category in English </label>
-                            <input class="form-input w-full" id="name" name="name" type="text"
-                                value="{{ old('name') }}">
-                            <x-jet-input-error for="name" />
-                        </div>
+                    <div class="mb-3">
+                        <x-form-label>
+                            <span>Category in English </span>
+                            <x-form-input name="name" value="{{ old('name') }}" />
+                        </x-form-label>
+                        <x-jet-input-error for="name " />
                     </div>
 
-                    <div class="flex flex-wrap  mb-2">
-                        <div class="w-full mb-2 px-3">
-                            <label for="name_si">Category in Sinhala </label>
-                            <input class="form-input w-full" id="name_si" type="text" name="name_si"
-                                value="{{ old('name_si') }}">
-                            <x-jet-input-error for="name_si" />
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap  mb-2">
-                        <div class="w-full mb-2 px-3">
-                            <label for="name_ta">Category in Tamil </label>
-                            <input class="form-input w-full" id="name_ta" type="text" name="name_ta"
-                                value="{{ old('name_ta') }}">
-                            <x-jet-input-error for="name_ta" />
-                        </div>
+                    <div class="mb-3">
+                        <x-form-label>
+                            <span>Category in Sinhala </span>
+                            <x-form-input name="name_si" value="{{ old('name_si') }}" />
+                        </x-form-label>
+                        <x-jet-input-error for="name_si " />
                     </div>
 
-                    <div class="flex flex-wrap  mb-2">
-                        <div class="w-full mb-2 px-3">
-                            <label for="img">Category image URL </label>
-                            <input class="form-input w-full" id="img" type="text" name="img" value="{{ old('img') }}">
-                            <x-jet-input-error for="img" />
-                        </div>
+                    <div class="mb-3">
+                        <x-form-label>
+                            <span>Category in Tamil </span>
+                            <x-form-input name="name_ta" value="{{ old('name_ta') }}" />
+                        </x-form-label>
+                        <x-jet-input-error for="name_ta " />
+                    </div>
+
+                    <div class="mb-3">
+                        <x-form-label>
+                            <span>CCategory image URL </span>
+                            <x-form-input name="img" value="{{ old('img') }}" />
+                        </x-form-label>
+                        <x-jet-input-error for="img " />
                     </div>
 
                     <div class=" flex w-full justify-end mt-2">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2  rounded-full"
-                            type="submit">
-                            Submit
-                        </button>
+                        <x-btn-primary>Submit</x-btn-primary>
                     </div>
                 </form>
 

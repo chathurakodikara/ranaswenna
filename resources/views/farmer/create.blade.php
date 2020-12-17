@@ -55,12 +55,13 @@
                             <label for="asc_id">ASC </label>
                             <select class="form-select w-full" id="asc_id" name="asc_id">
                                 {{-- @if ( old('asc_id') == )
-                                    
+
                                     @endif --}}
 
                                 <option value="">-Select-</option>
-                                <option value="1">Vavuniya</option>
-                                <option value="2">Texas</option>
+                                @foreach($asc as $data)
+                                    <option value="{{ $data->id }}">{{ $data->name }}</option>
+                                    @endforeach
                             </select>
                             <x-jet-input-error for="asc_id" />
                         </div>
@@ -69,7 +70,7 @@
                             <label for="gs_id"> GS Divistion </label>
                             <select class="form-select w-full" id="gs_id" name="gs_id">
                                 {{-- @if ( old('gs_id') == )
-                                    
+
                                     @endif --}}
 
                                 <option value="">-Select-</option>

@@ -12,6 +12,10 @@ class item extends Model
     public function category() {
         return $this->belongsTo('App\Models\Category');
     }
+    
+    public function Product(){
+        return $this->hasMany('App\Models\Product');
+    }
     protected $fillable = [
         'category_id',
         'name',

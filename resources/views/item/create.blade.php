@@ -17,7 +17,7 @@
 
                     <div class="flex flex-wrap -mx-3 mb-4">
                         <div class="w-full px-3">
-                           
+
                         </div>
                         <div class="w-full md:w-1/3 px-3 mb-2 ">
 
@@ -25,12 +25,12 @@
                                 <label for="category_id"> Product Category </label>
                                 <select class="form-select w-full" id="category_id" name="category_id">
                                     {{-- @if ( old('category_id') == )
-                                    
+
                                     @endif --}}
                                     <option value="">-Select-</option>
                                     @foreach($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
-
+ 
 
                                     @endforeach
                                 </select>
@@ -95,7 +95,7 @@
                         <button
                             class=" bg-green-700 px-4 py-2 rounded focus:outline-none hover:bg-green-600 transition-colors duration-150 ease-in-out text-white font-bold leading-relaxed"
                             type="submit">
-                            Create 
+                            Create
                         </button>
                         </div>
                 </form>

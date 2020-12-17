@@ -9,10 +9,10 @@ class category extends Model
 {
     use HasFactory;
 
-    public function item()
-    {
+    public function item(){
         return $this->hasMany('App\Models\Item');
     }
+    
     protected $fillable = [
         'name',
         'name_si',

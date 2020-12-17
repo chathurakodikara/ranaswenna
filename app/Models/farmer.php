@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class farmer extends Model
 {
     use HasFactory;
-    
+
+    public function Product(){
+        return $this->hasMany('App\Models\Product');
+    }
+
     protected $fillable = [
         'nic',
         'birthday',

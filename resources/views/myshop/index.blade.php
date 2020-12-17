@@ -70,22 +70,22 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach($myshops as $myshop)
+                                    @foreach($products as $product)
                                     <tr>
 
-                                        <td class="font-medium"> {{$myshop->id}}</td>
+                                        <td class="font-medium"> {{$product->id}}</td>
                                         <td>
-                                            {{$myshop->items_id}}
+                                            {{$product->items_id}}
                                         </td>
                                         <td>
-                                            {{$myshop->farmer_id}}</td>
+                                            {{$product->farmer_id}}</td>
                                         <td>
-                                            {{$myshop->qty}}</td>
+                                            {{$product->qty}}</td>
                                         <td>
-                                            {{$myshop->unit_price}}</td>
+                                            {{$product->unit_price}}</td>
                                         </td>
                                         <td>
-                                            {{$myshop->created_at}}</td>
+                                            {{$product->created_at}}</td>
                                         <td
                                             class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium ">
                                             <a href=""
