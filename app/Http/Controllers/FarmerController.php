@@ -52,8 +52,8 @@ class FarmerController extends Controller
 
     public function edit(Farmer $farmer )
     {
-
-        return view('farmer.edit' ,compact('farmer'));
+        $asc = Asc::all();
+        return view('farmer.edit' ,compact(['farmer','asc']));
     }
 
 
@@ -82,7 +82,7 @@ class FarmerController extends Controller
     public function destroy(farmer $farmer)
     {
         $farmer ->delete();
-        return redirect('/farmers');
+        return redirect('/farmers'); 
 
     }
 }

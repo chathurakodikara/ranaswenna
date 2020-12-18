@@ -11,7 +11,7 @@
 
                     <div class="mb-3">
                         <x-form-label>
-                            <span>Category in English </span>
+                            <span>Category in English *</span>
                             <x-form-input name="name" value="{{ old('name') }}" />
                         </x-form-label>
                         <x-jet-input-error for="name " />
@@ -35,7 +35,7 @@
 
                     <div class="mb-3">
                         <x-form-label>
-                            <span>CCategory image URL </span>
+                            <span>Category image URL </span>
                             <x-form-input name="img" value="{{ old('img') }}" />
                         </x-form-label>
                         <x-jet-input-error for="img " />

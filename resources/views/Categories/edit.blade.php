@@ -14,7 +14,7 @@
 
                     <div class="mb-3">
                         <x-form-label>
-                            <span>Category in English </span>
+                            <span>Category in English *</span>
                             <x-form-input name="name" value="{{$category->name}}" />
                         </x-form-label>
                         <x-jet-input-error for="name " />

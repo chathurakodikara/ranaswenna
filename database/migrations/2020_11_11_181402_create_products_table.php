@@ -25,13 +25,13 @@ class CreateProductsTable extends Migration
             $table->boolean('organic')->nullable();
             $table->unsignedTinyInteger('asc_id');
             $table->unsignedTinyInteger('gs_id');
-            $table->string('status', 12)->nullable();   
-            $table->unsignedBigInteger('user_id');  
+            $table->string('status', 12)->nullable();
+            $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *
