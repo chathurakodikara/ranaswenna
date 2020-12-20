@@ -50,7 +50,7 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, category $category)
-    {
+    { 
         $request->validate([
 
             'name'=> 'required|min:1|max:30',
@@ -64,7 +64,7 @@ class CategoryController extends Controller
         return redirect('/categories')->with('success', 'categories Updated');
     }
 
-   
+
     public function destroy(category $category)
     {
         //

@@ -24,4 +24,5 @@ class Product extends Model
     public function gs() {
         return $this->belongsTo('App\Models\gs');
     }
+    // protected $table = 'farmers';
 }
