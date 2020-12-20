@@ -46,9 +46,7 @@ class ProductsController extends Controller
         $farmer = Farmer::where('nic', $request->farmer_nic)->first();
 
         $product = new Product;
-
         $product->farmer_id =  $farmer->id;
-
 
         $product->items_id = $request->items_id;
         $product->description = $request->description;
@@ -60,7 +58,6 @@ class ProductsController extends Controller
         $product->asc_id =  $farmer->asc_id;
         $product->gs_id =  $farmer->gs_id;
         $product->user_id = auth()->user()->id;
-
         $product->save();
         return redirect()->back();
     }

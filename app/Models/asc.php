@@ -14,7 +14,7 @@ class asc extends Model
         return $this->hasMany('App\Models\Gs');
     }
 
-    public function Product(){
+    public function product(){
         return $this->hasMany('App\Models\Product');
     }
 }

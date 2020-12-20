@@ -9,7 +9,7 @@ class farmer extends Model
 {
     use HasFactory;
 
-    public function Product(){
+    public function product(){
         return $this->hasMany('App\Models\Product');
     }
 

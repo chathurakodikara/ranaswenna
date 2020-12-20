@@ -12,8 +12,8 @@ class item extends Model
     public function category() {
         return $this->belongsTo('App\Models\Category');
     }
-    
-    public function Product(){
+
+    public function product(){
         return $this->hasMany('App\Models\Product');
     }
     protected $fillable = [
