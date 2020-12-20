@@ -2,86 +2,89 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\products;
+use App\Models\Item;
+use App\Models\Farmer;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
-    /** 
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
-        $data= products::all();
-        return view('myshop.index',['myshops'=>$data]);
+        $products= Product::all();
+        return view('myshop.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
-        return view('myshop.create');
+        $categories = Category::all();
+        $items = Item::all();
+        // $farmerDetails = Farmer::where('name','=',Auth::user()->name)->first();
+         return view('myshop.create',compact(['categories' , 'items']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'farmer_nic' => 'required|exists:farmers,nic',
+            'product_category'=> 'required',
+            'items_id'=> 'required|exists:items,id',
+            'description'=> 'nullable|max:150',
+            'unit'=> 'required|max:10|in:Kg,Units,tons',
+            'qty'=> 'required|max:99999.99|numeric',
+            'unit_price'=> 'nullable|max:999999.99|numeric',
+            'organic'=> 'nullable|boolean',
+            'transport'=> 'nullable|boolean',
+         ]);
+            // dd($request->toArray());
+        $farmer = Farmer::where('nic', $request->farmer_nic)->first();
+
+        $product = new Product;
+
+        $product->farmer_id =  $farmer->id;
+
+
+        $product->items_id = $request->items_id;
+        $product->description = $request->description;
+        $product->unit = $request->unit;
+        $product->qty = $request->qty;
+        $product->unit_price = $request->unit_price;
+        $product->transport = $request->transport;
+        $product->organic = $request->organic;
+        $product->asc_id =  $farmer->asc_id;
+        $product->gs_id =  $farmer->gs_id;
+        $product->user_id = auth()->user()->id;
+
+        $product->save();
+        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function show(products $products)
+
+    public function show(product $product)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(products $products)
+
+    public function edit(product $product)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, products $products)
+
+    public function update(Request $request, product $product)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(products $products)
+
+    public function destroy(product $product)
     {
         //
     }

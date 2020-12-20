@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('items_id');
             $table->unsignedBigInteger('farmer_id');
             $table->string('description')->nullable();
-            $table->unsignedDecimal('qty',8,2);
-            $table->unsignedDecimal('unit',8,2);
+            $table->float('qty',8);
+            $table->string('unit',10);
             $table->unsignedDecimal('unit_price',8,2)->nullable();
             $table->boolean('transport')->nullable();
             $table->boolean('organic')->nullable();

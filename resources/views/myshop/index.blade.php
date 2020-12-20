@@ -1,184 +1,140 @@
 <x-app-layout>
     <x-slot name="header">
-        
-        
- 
+
+
+
     </x-slot>
 
     <div class="px-54 py-10">
-        <div class=" container mx-auto">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
-                <form>
+        <div class=" container mx-auto px-2">
 
-                    <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="md:flex flex-wrap justify-between items-baseline mb-3">
+                <div class="flex">
+                    <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Post of Products
+                    </h3>
 
-                        <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Post of Products
-                        </h3>
-
-                        <a href="{{ route('myshop.create')}}" class="inline-flex items-center ml-15 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">new <a>
-                        
+                    <div class=" relative px-4">
+                        <a href="{{ route('myshop.create') }}"
+                            class=" -mt-2 p-0 w-12 h-12 absolute flex items-center justify-center bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg shadow transition ease-in duration-200 focus:outline-none">
+                            <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-8 h-8 inline-block">
+                                <path fill="#FFFFFF"
+                                    d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601 C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399 C15.952,9,16,9.447,16,10z" />
+                            </svg>
+                        </a>
                     </div>
 
-                    <!-- component -->
-                    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+                </div>
+                <div>
+                    <div class="w-full md:w-96 inline-block relative ">
+                        <input type="" name=""
+                            class="leading-snug border border-gray-300 block w-full appearance-none bg-gray-100 text-lg text-gray-600 py-2 px-4 pl-8 rounded-lg"
+                            placeholder="Search" />
+
                         <div
-                            class="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
-                            <div class="flex justify-between">
-                                <div class="inline-flex border rounded w-7/12 px-2 lg:px-6 h-12 bg-transparent">
-                                    <div class="flex flex-wrap items-stretch w-full h-full mb-6 relative">
-                                        <div class="flex">
-                                            <span
-                                                class="flex items-center leading-normal bg-transparent rounded rounded-r-none border border-r-0 border-none lg:px-3 py-2 whitespace-no-wrap text-grey-dark text-sm">
-                                                <svg width="18" height="18" class="w-4 lg:w-auto" viewBox="0 0 18 18"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.11086 15.2217C12.0381 15.2217 15.2217 12.0381 15.2217 8.11086C15.2217 4.18364 12.0381 1 8.11086 1C4.18364 1 1 4.18364 1 8.11086C1 12.0381 4.18364 15.2217 8.11086 15.2217Z"
-                                                        stroke="#455A64" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                    <path d="M16.9993 16.9993L13.1328 13.1328" stroke="#455A64"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </span>
-                                        </div>
-                                        <input type="text"
-                                            class="flex-shrink flex-grow flex-auto leading-normal tracking-wide w-px flex-1 border border-none border-l-0 rounded rounded-l-none px-3 relative focus:outline-none text-xxs lg:text-xs lg:text-base text-gray-500 font-thin"
-                                            placeholder="Search">
-                                    </div>
-                                </div>
-                            </div>
+                            class="pointer-events-none absolute pl-3 inset-y-0 left-0 flex items-center px-2 text-gray-300">
+
+                            <svg class="fill-current h-3 w-3" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 511.999 511.999">
+                                <path
+                                    d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z" />
+                            </svg>
                         </div>
-                        <div
-                            class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
-                            <table class="min-w-full">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col">
+                <div class="overflow-x-auto">
+                    <div class="py-2 align-middle inline-block min-w-full ">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200 simple-table">
+
+
                                 <thead>
                                     <tr>
-                                        <th
-                                            class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             ID</th>
-                                        <th
-                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             Item Name</th>
-                                        <th
-                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             Farmer</th>
-                                        <th
-                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             Qty</th>
-                                        <th
-                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             Unit Price</th>
-                                        <th
-                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             Published</th>
-                                        <th
-                                            class="px-16 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                        <th>
                                             Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach($myshops as $myshop)
+                                    @foreach($products as $product)
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="flex items-center">
-                                                <div>
-                                                    <div class="text-sm leading-5 text-gray-800">
-                                                    {{$myshop->id}}</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                            <div class="text-sm leading-5 text-blue-900">
-                                            {{$myshop->items_id}}<div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            {{$myshop->farmer_id}}</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            {{$myshop->qty}}</td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                            {{$myshop->unit_price}}</td>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                            {{$myshop->created_at}}</td>
-                                        <td
-                                            class="px-8 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                            <button
-                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">
-                                                Edit</button>
 
-                                            <button
-                                                class="px-2 py-1 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
-                                                Delete</button>
+                                        <td class="font-medium"> {{$product->id}}</td>
+                                        <td>
+                                            {{$product->items_id}}
+                                        </td>
+                                        <td>
+                                            {{$product->farmer_id}}</td>
+                                        <td>
+                                            {{$product->qty}}</td>
+                                        <td>
+                                            {{$product->unit_price}}</td>
+                                        </td>
+                                        <td>
+                                            {{$product->created_at}}</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium ">
+                                            <a href=""
+                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">Edit</a>
                                         </td>
                                     </tr>
                                     @endforeach
 
 
 
-                                   
+
                                 </tbody>
                             </table>
-                            <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
-                                <div>
-                                    <p class="text-sm leading-5 text-blue-700">
-                                        Showing
-                                        <span class="font-medium">1</span>
-                                        to
-                                        <span class="font-medium">200</span>
-                                        of
-                                        <span class="font-medium">2000</span>
-                                        results
-                                    </p>
-                                </div>
-                                <div>
-                                    <nav class="relative z-0 inline-flex shadow-sm">
-                                        <div>
-                                            <a href="#"
-                                                class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
-                                                aria-label="Previous"
-                                                v-on:click.prevent="changePage(pagination.current_page - 1)">
-                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd"
-                                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="#"
-                                                class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-700 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
-                                                1
-                                            </a>
-                                            <a href="#"
-                                                class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
-                                                2
-                                            </a>
-                                            <a href="#"
-                                                class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
-                                                3
-                                            </a>
-                                        </div>
-                                        <div v-if="pagination.current_page < pagination.last_page">
-                                            <a href="#"
-                                                class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
-                                                aria-label="Next">
-                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd"
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
-                </form>
+                </div>
+            </div>
+
+            <div class=" flex sm:items-center justify-between mt-4 work-sans">
+                <div>
+                    <p class="text-sm leading-5 text-blue-700">
+                        Showing <span class="font-medium">1</span> to <span class="font-medium">200</span>
+                        of <span class="font-medium">2000</span> results
+                    </p>
+                </div>
+                <div id="pagination" class="flex items-center">
+                    <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9 12C9 12.2652 9.10536 12.5196 9.29289 12.7071L13.2929 16.7072C13.6834 17.0977 14.3166 17.0977 14.7071 16.7072C15.0977 16.3167 15.0977 15.6835 14.7071 15.293L11.4142 12L14.7071 8.70712C15.0977 8.31659 15.0977 7.68343 14.7071 7.29289C14.3166 6.90237 13.6834 6.90237 13.2929 7.29289L9.29289 11.2929C9.10536 11.4804 9 11.7348 9 12Z"
+                                fill="#2C2C2C" />
+                        </g>
+                    </svg>
+
+                    <p class="leading-relaxed cursor-pointer mx-2 text-blue-600 hover:text-blue-600 text-sm">1</p>
+                    <p class="leading-relaxed cursor-pointer mx-2 text-sm hover:text-blue-600">2</p>
+                    <p class="leading-relaxed cursor-pointer mx-2 text-sm hover:text-blue-600"> 3 </p>
+                    <p class="leading-relaxed cursor-pointer mx-2 text-sm hover:text-blue-600"> 4 </p>
+
+                    <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15 12C15 11.7348 14.8946 11.4804 14.7071 11.2929L10.7071 7.2929C10.3166 6.9024 9.6834 6.9024 9.2929 7.2929C8.9024 7.6834 8.9024 8.3166 9.2929 8.7071L12.5858 12L9.2929 15.2929C8.9024 15.6834 8.9024 16.3166 9.2929 16.7071C9.6834 17.0976 10.3166 17.0976 10.7071 16.7071L14.7071 12.7071C14.8946 12.5196 15 12.2652 15 12Z"
+                            fill="#18A0FB" /> </svg>
+
+                </div>
+
             </div>
         </div>
     </div>
