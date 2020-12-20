@@ -21,10 +21,10 @@ class ProductsController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
-        $items = Item::all();
+        // $categories = Category::all();
+        // $items = Item::all();
         // $farmerDetails = Farmer::where('name','=',Auth::user()->name)->first();
-         return view('myshop.create',compact(['categories' , 'items']));
+         return view('myshop.create');
     }
 
 
