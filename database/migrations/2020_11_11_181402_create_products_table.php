@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->unsignedTinyInteger('asc_id');
             $table->unsignedTinyInteger('gs_id');
             $table->string('status', 12)->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id');  
 
             $table->timestamps();
         });
