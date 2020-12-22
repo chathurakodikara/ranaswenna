@@ -59,7 +59,7 @@ class ProductsController extends Controller
         $product->gs_id =  $farmer->gs_id;
         $product->user_id = auth()->user()->id;
         $product->save();
-        return redirect()->back();
+        return redirect('/myshop')->with('success', 'Product Insert');
     }
 
 

@@ -17,4 +17,11 @@ class Asc extends Model
     public function products(){
         return $this->hasMany('App\Models\Product');
     }
+
+    protected $fillable = [
+        'district',
+        'name',
+        'name_si',
+        'name_ta'
+    ];
 }

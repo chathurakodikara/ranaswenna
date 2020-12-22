@@ -37,9 +37,9 @@ class ProductForm extends Component
 
     public function updatedFarmerNic()
     {
-       
+
         if (strlen($this->farmerNic) == 10 || strlen($this->farmerNic) == 12) {
-            
+
             $this->farmer = Farmer::where('nic', $this->farmerNic)->first();
             $this->farmerName = $this->farmer->name ?? '';
         }
@@ -55,7 +55,7 @@ class ProductForm extends Component
 
         $this->validate();
 
-        $this->farmer->products()->create([
+        $this->farmer->products()->create([ 
             'items_id' => $this->item_id,
             'description' => $this->description,
             'unit' =>  $this->unit,
@@ -70,11 +70,11 @@ class ProductForm extends Component
 
     }
 
-  
-  
+
+
     public function render()
     {
-        
+
         return view('livewire.product-form');
     }
 }

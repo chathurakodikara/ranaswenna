@@ -34,7 +34,7 @@ class FarmerController extends Controller
             'asc_id'=> 'required',
             'gs_id'=> 'required',
             'telephone_1'=> 'required|min:15|numeric',
-            'telephone_2'=> 'required|min:15|numeric',
+            'telephone_2'=> 'nullable|min:15|numeric',
             'email'=> 'nullable|email',
             'address'=> 'nullable',
          ]);
@@ -82,7 +82,7 @@ class FarmerController extends Controller
     public function destroy(farmer $farmer)
     {
         $farmer ->delete();
-        return redirect('/farmers'); 
+        return redirect('/farmers');
 
     }
 }

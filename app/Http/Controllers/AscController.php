@@ -2,82 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\asc;
+use App\Models\Asc;
 use Illuminate\Http\Request;
 
 class AscController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $ascs = Asc::all();
+        return view('asc.index',compact(['ascs']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view('asc.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'district'=> 'required|max:50',
+            'name'=> 'required|max:100',
+            'name_si'=> 'nullable|max:100',
+            'name_ta'=> 'nullable|max:100',
+
+         ]);
+
+        $asc = Asc::create($request->all());
+
+          return redirect('/ascs')->with('success', 'Asc Insert');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\asc  $asc
-     * @return \Illuminate\Http\Response
-     */
     public function show(asc $asc)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\asc  $asc
-     * @return \Illuminate\Http\Response
-     */
     public function edit(asc $asc)
     {
-        //
+        return view('asc.edit', compact('asc'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\asc  $asc
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, asc $asc)
     {
-        //
+        $request->validate([
+            'district'=> 'required|max:50',
+            'name'=> 'required|max:100',
+            'name_si'=> 'nullable|max:100',
+            'name_ta'=> 'nullable|max:100',
+
+         ]);
+
+        $asc->fill($request->all())->save();
+        return redirect('/ascs')->with('success', 'Asc Updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\asc  $asc
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(asc $asc)
     {
         //

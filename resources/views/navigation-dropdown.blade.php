@@ -27,6 +27,9 @@
                     <x-jet-nav-link href="{{ route('items.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Items') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('ascs.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Asc') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 

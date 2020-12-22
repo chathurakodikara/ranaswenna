@@ -66,6 +66,8 @@
                         </div>
                     </div>
 
+
+
                     <div class="mb-3">
                         <x-form-label>
                             <span>Product Description</span>
@@ -74,6 +76,7 @@
                         </x-form-label>
                         <x-jet-input-error for="description" />
                     </div>
+
 
                     <div class="grid sm:grid-cols-3 grid-cols-1 gap-x-6 gap-y-3 mb-3">
 
@@ -127,6 +130,8 @@
                     <div class=" flex w-full justify-end mt-6">
                         <x-btn-primary>Create</x-btn-primary>
                     </div>
+
+
 
                 </form>
             </div>
