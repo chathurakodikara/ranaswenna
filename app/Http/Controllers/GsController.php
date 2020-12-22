@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\gs;
+use App\Models\Gs;
+use App\Models\Asc;
 use Illuminate\Http\Request;
 
 class GsController extends Controller
@@ -11,60 +12,52 @@ class GsController extends Controller
     public function index()
     {
         $gss = Gs::all();
-        return view('asc.index',compact('gss'));
+        return view('gs.index',compact('gss'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $ascs = Asc::all();
+        return view('gs.create',compact(['ascs']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'asc_id'=> 'required',
+            'name'=> 'required|max:100',
+            'name_si'=> 'nullable|max:100',
+            'name_ta'=> 'nullable|max:100',
+
+         ]);
+
+        $gs = Gs::create($request->all());
+
+          return redirect('/gss')->with('success', 'Gs Insert');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\gs  $gs
-     * @return \Illuminate\Http\Response
-     */
-    public function show(gs $gs)
+
+    public function show(Gs $gs)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\gs  $gs
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(gs $gs)
+
+    public function edit(Gs $gs)
     {
-        //
+        $ascs = Asc::all();
+        return view('gs.edit',compact(['ascs','gs']));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\gs  $gs
+     * @param  \App\Models\Gs  $gs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, gs $gs)
+    public function update(Request $request, Gs $gs)
     {
         //
     }
@@ -72,10 +65,10 @@ class GsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\gs  $gs
+     * @param  \App\Models\Gs  $gs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(gs $gs)
+    public function destroy(Gs $gs)
     {
         //
     }

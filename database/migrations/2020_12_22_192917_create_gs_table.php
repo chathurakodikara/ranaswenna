@@ -13,7 +13,7 @@ class CreateGsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gss', function (Blueprint $table) {
+        Schema::create('gs', function (Blueprint $table) {
             $table->integerIncrements('id');
             $table->unsignedTinyInteger('asc_id');
             $table->string('name',100)->unique();

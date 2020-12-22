@@ -17,4 +17,11 @@ class Gs extends Model
     public function products(){
         return $this->hasMany('App\Models\Product');
     }
+
+    protected $fillable = [
+        'asc_id',
+        'name',
+        'name_si',
+        'name_ta'
+    ];
 }

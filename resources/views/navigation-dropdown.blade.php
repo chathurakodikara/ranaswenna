@@ -30,6 +30,9 @@
                     <x-jet-nav-link href="{{ route('ascs.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Asc') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('gss.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Gs') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
