@@ -55,7 +55,7 @@
                                         <th> Category </th>
                                         <th>  Category </th>
                                         <th> Category </th>
-                                        <th>---</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 

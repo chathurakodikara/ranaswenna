@@ -40,7 +40,7 @@ class AscController extends Controller
     }
 
     public function edit(asc $asc)
-    {
+    {   
         return view('asc.edit', compact('asc'));
     }
 

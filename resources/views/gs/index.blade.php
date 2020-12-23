@@ -65,7 +65,7 @@
 
                                     <tr>
                                         <td class="font-medium">{{ $gs->id }}</td>
-                                        <td class="font-medium"> {{ $gs->asc_id }} </td>
+                                        <td class="font-medium"> {{ $gs->asc->name }} </td>
                                         <td class="font-medium"> {{ $gs->name }} </td>
                                         <td> {{ $gs->name_si }} </td>
                                         <td> {{ $gs->name_ta }} </td>

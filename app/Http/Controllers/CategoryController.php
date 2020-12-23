@@ -34,7 +34,7 @@ class CategoryController extends Controller
          ]);
 
         $category = Category::create($request->all());
-        return view('categories.create');
+        return redirect('/categories')->with('success', 'categories Updated');
 
     }
 
@@ -50,7 +50,7 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, category $category)
-    { 
+    {
         $request->validate([
 
             'name'=> 'required|min:1|max:30',
