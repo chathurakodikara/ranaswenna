@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gs;
 use App\Models\Asc;
 use App\Models\Farmer;
 use Illuminate\Http\Request;
@@ -53,7 +54,8 @@ class FarmerController extends Controller
     public function edit(Farmer $farmer )
     {
         $asc = Asc::all();
-        return view('farmer.edit' ,compact(['farmer','asc']));
+        $gss = Gs::all();
+        return view('farmer.edit' ,compact(['farmer','asc','gss']));
     }
 
 

@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 ">
                 <h3 class=" font-bold text-gray-800 text-3xl flex-100 mb-4 pb-2 border-b border-gray-200">Add products
                     to market Place</h3>
-                
+
                 <livewire:product-form >
 
             </div>

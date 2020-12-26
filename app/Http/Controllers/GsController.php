@@ -46,6 +46,7 @@ class GsController extends Controller
 
     public function edit(Gs $gs)
     {
+        dd($gs);
         return view('gs.edit',compact('gs'));
 
     }

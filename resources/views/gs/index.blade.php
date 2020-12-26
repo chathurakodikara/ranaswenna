@@ -58,7 +58,7 @@
                                         <th>GS In Tamil</th>
                                         <th>Action</th>
                                     </tr>
-                                </thead>
+                                </thead> 
 
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     @foreach ($gss as $gs)

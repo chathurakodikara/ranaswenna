@@ -18,7 +18,7 @@
             <div class="col-span-2">
                 <x-form-label>
                     <span>Full Name</span>
-                    <x-form-input 
+                    <x-form-input
                         class="form-input w-full bg-gray-100 focus:shadow-none focus:border-gray-100 border-gray-100"
                         readonly value="{{ $farmerName }}" />
                 </x-form-label>
@@ -52,7 +52,37 @@
                         @endforeach
                     </x-form-select>
                 </x-form-label>
-                <x-jet-input-error for="item_id" />
+                <x-jet-input-error for="item_id"/>
+            </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-3 mb-3">
+
+            <div>
+                <x-form-label>
+                    <span>ASC Aria *</span>
+                    <x-form-select wire:model="asc_id">
+                        <option value="">-Select-</option>
+                        @foreach($ascs as $asc)
+                            <option value="{{ $asc->id }}">{{ $asc->name }}</option>
+                        @endforeach
+                    </x-form-select>
+                </x-form-label>
+                <x-jet-input-error for="asc_id"/>
+            </div>
+
+
+            <div>
+                <x-form-label>
+                    <span>GS Divistion *</span>
+                    <x-form-select wire:model="gs_id" >
+                        <option value="">-Select-</option>
+                        @foreach($gss as $gs)
+                            <option value="{{ $gs->id }}">{{ $gs->name }}</option>
+                        @endforeach
+                    </x-form-select>
+                </x-form-label>
+                <x-jet-input-error for="gs_id"/>
             </div>
         </div>
 
@@ -87,6 +117,7 @@
                 </x-form-label>
                 <x-jet-input-error for="qty" />
             </div>
+
 
             <div>
                 <x-form-label>

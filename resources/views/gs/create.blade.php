@@ -16,7 +16,9 @@
                                 <x-form-select name="asc_id">
                                     <option value="">-Select-</option>
                                     @foreach($ascs as $asc)
-                                    <option value="{{ $asc->id }}">{{ $asc->name }}</option>
+                                    
+                                    <option value="{{ $asc->id }}" @if (old('asc_id')==$asc->id) selected @endif>
+                                        {{ $asc->name }}</option>
                                     @endforeach
                                 </x-form-select>
                             </x-form-label>

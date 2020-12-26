@@ -1,18 +1,13 @@
-<x-app-layout>
-    <x-slot name="header">
-
-
-    </x-slot>
-
+<div>
     <div class="px-54 py-10">
         <div class=" container mx-auto px-2">
 
             <div class="md:flex flex-wrap justify-between items-baseline mb-3">
                 <div class="flex">
-                    <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Product Title</h3>
+                    <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Farmers' List </h3>
 
                     <div class=" relative px-4">
-                        <a href="{{ route('items.create') }}"
+                        <a href="{{ route('farmers.create') }}"
                             class=" -mt-2 p-0 w-12 h-12 absolute flex items-center justify-center bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg shadow transition ease-in duration-200 focus:outline-none">
                             <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-8 h-8 inline-block">
                                 <path fill="#FFFFFF"
@@ -49,35 +44,34 @@
                             <table class="min-w-full divide-y divide-gray-200 simple-table">
 
 
-
                                 <thead>
-                                <tr >
+                                    <tr>
                                         <th> # </th>
-                                        <th> Image </th>
-                                        <th>  Title English </th>
-                                        <th> Title Sinhala </th>
-                                        <th>Title Tamil</th>
-                                        <th>Category</th>
-                                        <th>Keywords</th>
-                                        <th>---</th>
+                                        <th> NIC </th>
+                                        <th> Name </th>
+                                        <th> Agrarian Divition </th>
+                                        <th> Telephone *</th>
+                                        <th> Telephone 2 </th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                    @foreach ($items as $item)
+                                    @foreach ($farmers as $farmer)
 
                                     <tr>
-                                        <td class="font-medium">{{ $item->id }}</td>
-                                        <td> {{ $item->img }} </td>
-                                        <td> {{ $item->name }} </td>
-                                        <td> {{ $item->name_si }} </td>
-                                        <td> {{ $item->name_ta }} </td>
-                                        <td> {{ $item->category->name }} </td>
-                                        <td> {{ $item->keywords }} </td>
-                                        <td
-                                            class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium ">
-                                            <a href="{{ route('items.edit', $item) }}"
-                                                class="px-2 py-1 border-yellow-500 border text-yellow-500 rounded transition duration-300 hover:bg-yellow-300 hover:text-white focus:outline-none">Edit</a>
+                                        <td class="font-medium">{{ $farmer->id }}</td>
+                                        <td> {{ $farmer->nic }} </td>
+                                        <td> {{ $farmer->name }} </td>
+                                        <td> {{ $farmer->asc_id }} - {{ $farmer->gs_id }} </td>
+                                        <td> {{ $farmer->telephone_1 }} </td>
+                                        <td> {{ $farmer->telephone_2 }} </td>
+
+                                        <td>
+
+                                            <div class="whitespace-no-wrap flex items-center">
+                                                <x-btn-edit wire:click="editFarmer{{ $farmer->id }}" />
+                                            </div>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -96,8 +90,8 @@
             <div class=" flex sm:items-center justify-between mt-4 work-sans">
                 <div>
                     <p class="text-sm leading-5 text-blue-700">
-                        Showing <span class="font-medium">1</span> to <span class="font-medium">50</span>
-                        of <span class="font-medium">50</span> results
+                        Showing <span class="font-medium">1</span> to <span class="font-medium">200</span>
+                        of <span class="font-medium">2000</span> results
                     </p>
                 </div>
                 <div id="pagination" class="flex items-center">
@@ -126,4 +120,13 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+    {{-- <x-jet-dialog-modal wire:model="neweditfarmer" footerCss="hidden" >
+        <x-slot name="title"> Update Farmer </x-slot>
+        <x-slot name="content">
+            {{ $data }}
+            <livewire:farmer.edit-farmer>
+
+        </x-slot>
+        <x-slot name="footer"> </x-slot>
+    </x-jet-dialog-modal> --}}
+</div>

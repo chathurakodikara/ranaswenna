@@ -34,6 +34,8 @@ class ProductsController extends Controller
         $request->validate([
             'farmer_nic' => 'required|exists:farmers,nic',
             'product_category'=> 'required',
+            'asc_id'=> 'required',
+            'gs_id'=> 'required|exists:gs,id',
             'items_id'=> 'required|exists:items,id',
             'description'=> 'nullable|max:150',
             'unit'=> 'required|max:10|in:Kg,Units,tons',
@@ -41,6 +43,8 @@ class ProductsController extends Controller
             'unit_price'=> 'nullable|max:999999.99|numeric',
             'organic'=> 'nullable|boolean',
             'transport'=> 'nullable|boolean',
+
+
          ]);
             // dd($request->toArray());
         $farmer = Farmer::where('nic', $request->farmer_nic)->first();
@@ -55,8 +59,8 @@ class ProductsController extends Controller
         $product->unit_price = $request->unit_price;
         $product->transport = $request->transport;
         $product->organic = $request->organic;
-        $product->asc_id =  $farmer->asc_id;
-        $product->gs_id =  $farmer->gs_id;
+        $product->asc_id =  $request->asc_id;
+        $product->gs_id =  $request->gs_id;
         $product->user_id = auth()->user()->id;
         $product->save();
         return redirect('/myshop')->with('success', 'Product Insert');

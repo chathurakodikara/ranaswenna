@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Gs;
+use App\Models\Asc;
 use App\Models\Item;
 use App\Models\Farmer;
 use App\Models\Product;
@@ -12,10 +14,12 @@ class ProductForm extends Component
 {
     public $categories = [];
     public $items = [];
+    public $ascs = [];
+    public $gss = [];
 
     public $farmerNic, $farmerName, $farmer;
 
-    public $product_category, $item_id, $description, $unit, $qty, $unit_price, $organic, $transport;
+    public $product_category, $item_id, $description, $unit, $qty, $unit_price, $organic, $transport, $asc_id, $gs_id;
 
 
     protected $rules = [
@@ -33,6 +37,7 @@ class ProductForm extends Component
     public function mount()
     {
         $this->categories = Category::all();
+        $this->ascs = Asc::all();
     }
 
     public function updatedFarmerNic()
@@ -50,12 +55,17 @@ class ProductForm extends Component
         $this->items = Item::where('category_id', $this->product_category)->get();
     }
 
+    public function updatedAscId()
+    {
+        $this->gss = Gs::where('asc_id', $this->asc_id)->get();
+    }
+
     public function productSubmit()
     {
 
         $this->validate();
 
-        $this->farmer->products()->create([ 
+        $this->farmer->products()->create([
             'items_id' => $this->item_id,
             'description' => $this->description,
             'unit' =>  $this->unit,
@@ -63,8 +73,8 @@ class ProductForm extends Component
             'unit_price' =>  $this->unit_price,
             'transport' =>  $this->transport,
             'organic' =>  $this->organic,
-            'asc_id' =>  1,
-            'gs_id' =>  1,
+            'asc_id' =>  $this->asc_id,
+            'gs_id' =>  $this->gs_id,
             'user_id' => auth()->user()->id
         ]);
 

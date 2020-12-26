@@ -4,10 +4,11 @@ namespace App\Http\Livewire\Farmer;
 
 use Livewire\Component;
 
-class EditForm extends Component
+class EditFarmer extends Component
 {
+    
     public function render()
     {
-        return view('livewire.farmer.edit-form');
+        return view('livewire.farmer.edit-farmer');
     }
 }

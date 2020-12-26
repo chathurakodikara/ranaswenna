@@ -66,7 +66,35 @@
                         </div>
                     </div>
 
+                    <div class="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-3 mb-3">
 
+                        <div>
+                            <x-form-label>
+                                <span>ASC Aria *</span>
+                                <x-form-select name="asc_id">
+                                    <option value="">-Select-</option>
+                                    @foreach($ascs as $asc)
+                                        <option value="{{ $asc->id }}">{{ $asc->name }}</option>
+                                    @endforeach
+                                </x-form-select>
+                            </x-form-label>
+                            <x-jet-input-error for="asc_id" />
+                        </div>
+
+
+                        <div>
+                            <x-form-label>
+                                <span>GS Divistion *</span>
+                                <x-form-select name="gs_id" >
+                                    <option value="">-Select-</option>
+                                    @foreach($gss as $gs)
+                                        <option value="{{ $gs->id }}">{{ $gs->name }}</option>
+                                    @endforeach
+                                </x-form-select>
+                            </x-form-label>
+                            <x-jet-input-error for="gs_id" />
+                        </div>
+                    </div>
 
                     <div class="mb-3">
                         <x-form-label>
