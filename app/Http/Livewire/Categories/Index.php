@@ -12,10 +12,6 @@ class Index extends Component
 
     protected $listeners = ['search'];
 
-    public function mount()
-    {
-    }
-
     public function search($search)
     {
         $this->search = $search;
