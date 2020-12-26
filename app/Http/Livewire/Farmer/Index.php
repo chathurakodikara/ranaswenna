@@ -4,17 +4,21 @@ namespace App\Http\Livewire\Farmer;
 
 use App\Models\Farmer;
 use Livewire\Component;
+use Livewire\WithPagination;
+
 
 class Index extends Component
 {
-    public $farmers = [];
+    public $search;
+    protected $listeners = ['search'];
     // public $data;
     // public $neweditfarmer = false;
 
-    public function mount()
+    public function search($search)
     {
-        $this->farmers = Farmer::all();
+        $this->search = $search;
     }
+
     public function editFarmer($id)
     {
         // $this->neweditfarmer = true;
@@ -23,6 +27,12 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.farmer.index');
+        $farmers = Farmer::where('nic', 'LIKE', '%'.$this->search.'%')
+                            ->orWhere('name', 'LIKE', '%'.$this->search.'%')
+                            ->paginate(10);
+
+        return view('livewire.farmer.index',[
+            'farmers' =>$farmers
+        ]);
     }
 }

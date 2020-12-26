@@ -2,41 +2,17 @@
     <div class="px-54 py-10">
         <div class=" container mx-auto px-2">
 
-            <div class="md:flex flex-wrap justify-between items-baseline mb-3">
-                <div class="flex">
-                    <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Farmers' List </h3>
 
-                    <div class=" relative px-4">
-                        <a href="{{ route('farmers.create') }}"
-                            class=" -mt-2 p-0 w-12 h-12 absolute flex items-center justify-center bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg shadow transition ease-in duration-200 focus:outline-none">
-                            <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-8 h-8 inline-block">
-                                <path fill="#FFFFFF"
-                                    d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601 C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399 C15.952,9,16,9.447,16,10z" />
-                            </svg>
-                        </a>
+                <div class="md:flex flex-wrap justify-between items-baseline mb-3">
+                    <div class="flex">
+                        <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Registerd Farmers List</h3>
+                        <livewire:floating-action-button link="/farmers/create">
                     </div>
-
-                </div>
-                <div>
-                    <div class="w-full md:w-96 inline-block relative ">
-                        <input type="" name=""
-                            class="leading-snug border border-gray-300 block w-full appearance-none bg-gray-100 text-lg text-gray-600 py-2 px-4 pl-8 rounded-lg"
-                            placeholder="Search" />
-
-                        <div
-                            class="pointer-events-none absolute pl-3 inset-y-0 left-0 flex items-center px-2 text-gray-300">
-
-                            <svg class="fill-current h-3 w-3" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 511.999 511.999">
-                                <path
-                                    d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z" />
-                            </svg>
-                        </div>
-                    </div>
-
+                    <livewire:search-index-input>
                 </div>
 
-            </div>
+
+
             <div class="flex flex-col">
                 <div class="overflow-x-auto">
                     <div class="py-2 align-middle inline-block min-w-full ">
@@ -86,8 +62,12 @@
 
                 </div>
             </div>
+            <div class="mt-4 ">
 
-            <div class=" flex sm:items-center justify-between mt-4 work-sans">
+                {!! $farmers->onEachSide(0)->links() !!}
+            </div>
+
+            {{-- <div class=" flex sm:items-center justify-between mt-4 work-sans">
                 <div>
                     <p class="text-sm leading-5 text-blue-700">
                         Showing <span class="font-medium">1</span> to <span class="font-medium">200</span>
@@ -117,7 +97,7 @@
 
                 </div>
 
-            </div>
+            </div> --}}
         </div>
     </div>
     {{-- <x-jet-dialog-modal wire:model="neweditfarmer" footerCss="hidden" >
