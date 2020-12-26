@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Item;
 
 use App\Models\Item;
 use Livewire\Component;
+use Livewire\WithPagination;
+
 
 class Index extends Component
 {
