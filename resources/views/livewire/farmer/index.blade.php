@@ -2,7 +2,7 @@
     <div class="px-54 py-10">
         <div class=" container mx-auto px-2">
 
-
+ 
                 <div class="md:flex flex-wrap justify-between items-baseline mb-3">
                     <div class="flex">
                         <h3 class=" font-bold text-gray-800 text-2xl flex-100 inline-flex items-center">Registerd Farmers List</h3>
