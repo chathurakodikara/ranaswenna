@@ -1,11 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
 
-
-
-    </x-slot>
-
-    <div class="px-54 py-10">
+    <livewire:product.index>
+    {{-- <div class="px-54 py-10">
         <div class=" container mx-auto px-2">
 
             <div class="md:flex flex-wrap justify-between items-baseline mb-3">
@@ -137,5 +133,5 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 </x-app-layout>
