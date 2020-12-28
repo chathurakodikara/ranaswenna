@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GsController;
 use App\Http\Controllers\AscController;
+use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\CategoryController;
@@ -27,6 +28,9 @@ Route::resource('/items' , ItemsController::class );
 Route::resource('/ascs' , AscController::class );
 
 Route::resource('/gss' , GsController::class );
+
+Route::resource('/buyers' , BuyerController::class );
+
 
 
 

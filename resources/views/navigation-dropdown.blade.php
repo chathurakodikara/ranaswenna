@@ -33,6 +33,9 @@
                     <x-jet-nav-link href="{{ route('gss.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Gs') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('buyers.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Purchaser') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 

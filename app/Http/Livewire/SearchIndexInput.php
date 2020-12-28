@@ -11,6 +11,7 @@ class SearchIndexInput extends Component
     public function render()
     {
         $this->emit('search', $this->search_index);
+        
         return view('livewire.search-index-input');
     }
 }
