@@ -16,10 +16,10 @@
                             <x-form-label>
                                 <span>ASC Divisions *</span>
                                 <x-form-select name="asc_id">
-                                    <option value="">-Select-</option>
-                                    {{-- @foreach($ascs as $asc)
+                                    <option value="{{ $gs->asc->id }}">{{ $gs->asc->name }}</option>
+                                    @foreach($ascs as $asc)
                                     <option value="{{ $asc->id }}">{{ $asc->name }}</option>
-                                    @endforeach --}}
+                                    @endforeach
                                 </x-form-select>
                             </x-form-label>
                             <x-jet-input-error for="asc_id" />

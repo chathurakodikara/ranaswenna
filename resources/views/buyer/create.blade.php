@@ -79,6 +79,7 @@
                         <x-form-label>
                             <span>Title *</span>
                             <x-form-select name="title">
+                                
                                 <option value="mr">Mr</option>
                                 <option value="mrs">Mrs</option>
                                 <option value="miss">Miss</option>
