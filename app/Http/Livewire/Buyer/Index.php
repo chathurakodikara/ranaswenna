@@ -4,18 +4,27 @@ namespace App\Http\Livewire\Buyer;
 
 use App\Models\Buyer;
 use Livewire\Component;
+use Livewire\WithPagination;
+
 
 class Index extends Component
 {
-    public $buyers = [];
+    public $search;
+    protected $listeners = ['search'];
 
-    public function mount()
+    public function search($search)
     {
-        $this->buyers = Buyer::all();
+        $this->search = $search;
     }
 
     public function render()
     {
-        return view('livewire.buyer.index');
+        $buyers = Buyer::where('business', 'LIKE', '%'.$this->search.'%')
+                                    ->orWhere('contacted_person', 'LIKE', '%'.$this->search.'%')
+                                    ->paginate(10);
+
+        return view('livewire.buyer.index',[
+            'buyers' => $buyers
+        ]);
     }
 }

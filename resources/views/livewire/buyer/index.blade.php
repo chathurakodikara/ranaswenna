@@ -58,6 +58,9 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-4 ">
+                {!! $buyers->onEachSide(0)->links() !!}
+            </div>
         </div>
     </div>
 </div>
