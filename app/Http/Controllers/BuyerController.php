@@ -20,15 +20,28 @@ class BuyerController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'business'=> 'required|min:2|max:150',
+            'registration_no'=> 'nullable|max:25',
+            'type'=> 'required|max:25',
+            'telephone'=> 'required|max:15',
+            'description'=> 'nullable|max:250',
+            'address'=> 'required|max:250',
+            'title'=> 'required|max:12|in:mr,mrs,miss,dr,ms',
+            'contacted_person'=> 'required|min:3||max:150',
+            'mobile_1'=> 'required|min:15|numeric',
+            'mobile_2'=> 'nullable|min:15|numeric',
+            'fax'=> 'nullable',
+            'email'=> 'nullable|email',
+
+         ]);
+
+        $buyer = Buyer::create($request->all());
+        return redirect('/buyers');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Buyer  $buyer
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Buyer $buyer)
     {
         //

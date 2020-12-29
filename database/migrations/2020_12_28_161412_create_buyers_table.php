@@ -16,7 +16,7 @@ class CreateBuyersTable extends Migration
         Schema::create('buyers', function (Blueprint $table) {
             $table->id();
             $table->string('business',150);
-            $table->string('registration_no',15);
+            $table->string('registration_no',25)->nullable();
             $table->string('type',25)->nullable();
             $table->string('telephone',15)->nullable();
             $table->string('description',250)->nullable();

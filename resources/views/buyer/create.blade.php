@@ -7,7 +7,9 @@
 
                 <form method="POST" action="/buyers">
                     @csrf
-
+                    <div class="font-bold text-sm mb-3">
+                        <h2>Business Information</h2>
+                    </div>
                     <div class="mb-3">
                         <x-form-label>
                             <span>Business Name *</span>
@@ -15,11 +17,10 @@
                         </x-form-label>
                         <x-jet-input-error for="business" />
                     </div>
-
-                    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mb-3">
+                    <div class=" grid sm:grid-cols-2 grid:cols-1 gap-x-6 gap-y-3 mb-3 ">
                         <div>
                             <x-form-label>
-                                <span>Registration No *</span>
+                                <span>Registration No </span>
                                 <x-form-input name="registration_no" value="{{ old('registration_no') }}" />
                             </x-form-label>
                             <x-jet-input-error for="registration_no" />
@@ -35,12 +36,23 @@
                                 <x-jet-input-error for="type" />
                             </x-form-label>
                         </div>
+
+                    </div>
+
+                    <div class=" grid sm:grid-cols-2 grid:cols-1 gap-x-6 gap-y-3 mb-3 ">
                         <div>
                             <x-form-label>
-                                <span>Telephone *</span>
+                                <span> Telephone *</span>
                                 <x-form-input name="telephone" value="{{ old('telephone') }}" />
                             </x-form-label>
                             <x-jet-input-error for="telephone" />
+                        </div>
+                        <div>
+                            <x-form-label>
+                                <span>Fax </span>
+                                <x-form-input name="fax" value="{{ old('fax') }}" />
+                            </x-form-label>
+                            <x-jet-input-error for="fax" />
                         </div>
                     </div>
 
@@ -58,6 +70,9 @@
                             <x-form-textarea name="address">{{ old('address') }}</x-form-textarea>
                         </x-form-label>
                         <x-jet-input-error for="address" />
+                    </div>
+                    <div class="font-bold text-sm mb-3">
+                        <h2>Contacted Person Information</h2>
                     </div>
 
                     <div class="grid sm:grid-cols-4 grid-cols-1 gap-x-6 gap-y-3 mb-3">
@@ -78,7 +93,7 @@
                         <x-jet-input-error for="contacted_person" />
                     </div>
 
-                    <div class="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-3 mb-3">
+                    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mb-3">
                         <div>
                             <x-form-label>
                                 <span>Mobile *</span>
@@ -93,22 +108,12 @@
                             </x-form-label>
                             <x-jet-input-error for="mobile_2" />
                         </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-3 mb-3">
-                        <div>
-                            <x-form-label>
-                                <span>Fax </span>
-                                <x-form-input name="fax" value="{{ old('fax') }}" />
-                            </x-form-label>
-                            <x-jet-input-error for="fax" />
-                        </div>
                         <div>
                             <x-form-label>
                                 <span>Email</span>
-                                <x-form-input name="Email" value="{{ old('Email') }}" />
+                                <x-form-input name="email" value="{{ old('email') }}" />
                             </x-form-label>
-                            <x-jet-input-error for="Email" />
+                            <x-jet-input-error for="email" />
                         </div>
                     </div>
 
