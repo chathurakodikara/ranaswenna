@@ -18,9 +18,9 @@
             <div class="col-span-2">
                 <x-form-label>
                     <span>Full Name</span>
-                    <x-form-input
+                    <x-form-input wire:model='farmerName'
                         class="form-input w-full bg-gray-100 focus:shadow-none focus:border-gray-100 border-gray-100"
-                        readonly value="{{ $farmerName }}" />
+                        readonly  />
                 </x-form-label>
                 <x-jet-input-error for="name" />
             </div>
