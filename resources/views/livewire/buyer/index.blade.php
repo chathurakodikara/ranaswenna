@@ -37,11 +37,11 @@
 
                                     <tr>
                                         <td class="font-medium">{{ $buyer->id }}</td>
-                                        <td class="font-medium"> {{ $buyer->business }} </td>
+                                        <td class="uppercase font-bold"> {{ $buyer->business }} </td>
                                         <td> {{ $buyer->registration_no }} </td>
                                         <td> {{ $buyer->type }} </td>
                                         <td> {{ $buyer->telephone }} </td>
-                                        <td class="font-medium"> {{ $buyer->contacted_person }} </td>
+                                        <td class="font-medium capitalize"> {{ $buyer->contacted_person_with_title }} </td>
                                         <td> {{ $buyer->mobile_1 }} </td>
                                         <td> {{ $buyer->email }} </td>
 
