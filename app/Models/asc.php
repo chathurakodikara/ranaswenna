@@ -18,6 +18,10 @@ class Asc extends Model
         return $this->hasMany('App\Models\Product');
     }
 
+    public function farmer(){
+        return $this->hasMany('App\Models\Farmer');
+    }
+
     protected $fillable = [
         'district',
         'name',
