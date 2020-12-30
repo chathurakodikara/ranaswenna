@@ -31,39 +31,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'farmer_nic' => 'required|exists:farmers,nic',
-            'product_category'=> 'required',
-            'asc_id'=> 'required',
-            'gs_id'=> 'required|exists:gs,id',
-            'items_id'=> 'required|exists:items,id',
-            'description'=> 'nullable|max:150',
-            'unit'=> 'required|max:10|in:Kg,Units,tons',
-            'qty'=> 'required|max:99999.99|numeric',
-            'unit_price'=> 'nullable|max:999999.99|numeric',
-            'organic'=> 'nullable|boolean',
-            'transport'=> 'nullable|boolean',
-
-
-         ]);
-            // dd($request->toArray());
-        $farmer = Farmer::where('nic', $request->farmer_nic)->first();
-
-        $product = new Product;
-        $product->farmer_id =  $farmer->id;
-
-        $product->items_id = $request->items_id;
-        $product->description = $request->description;
-        $product->unit = $request->unit;
-        $product->qty = $request->qty;
-        $product->unit_price = $request->unit_price;
-        $product->transport = $request->transport;
-        $product->organic = $request->organic;
-        $product->asc_id =  $request->asc_id;
-        $product->gs_id =  $request->gs_id;
-        $product->user_id = auth()->user()->id;
-        $product->save();
-        return redirect('/myshop')->with('success', 'Product Insert');
+       
     }
 
 
