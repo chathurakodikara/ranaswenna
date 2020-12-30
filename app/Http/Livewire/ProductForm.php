@@ -48,7 +48,13 @@ class ProductForm extends Component
         if (strlen($this->farmerNic) == 10 || strlen($this->farmerNic) == 12) {
 
             $this->farmer = Farmer::where('nic', $this->farmerNic)->first();
+
             $this->farmerName = $this->farmer->name ?? '';
+            $this->asc_id = $this->farmer->asc_id ?? '';
+
+            $this->updatedAscId($this->asc_id);
+            $this->gs_id = $this->farmer->gs_id ?? '';
+
         }
     }
 
@@ -57,9 +63,9 @@ class ProductForm extends Component
         $this->items = Item::where('category_id', $this->product_category)->get();
     }
 
-    public function updatedAscId()
+    public function updatedAscId($id)
     {
-        $this->gss = Gs::where('asc_id', $this->asc_id)->get();
+        $this->gss = Gs::where('asc_id', $id)->get();
     }
 
     public function productSubmit()
@@ -68,7 +74,7 @@ class ProductForm extends Component
         $this->validate();
 
         $this->farmer->products()->create([
-            'items_id' => $this->item_id,
+            'item_id' => $this->item_id,
             'description' => $this->description,
             'unit' =>  $this->unit,
             'qty' =>  $this->qty,
