@@ -13,6 +13,14 @@ class Farmer extends Model
         return $this->hasMany('App\Models\Product');
     }
 
+    public function asc() {
+        return $this->belongsTo('App\Models\Asc');
+    }
+
+    public function gs() {
+        return $this->belongsTo('App\Models\Gs');
+    }
+
     protected $fillable = [
         'nic',
         'birthday',
