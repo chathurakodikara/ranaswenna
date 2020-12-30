@@ -23,4 +23,9 @@ class Buyer extends Model
         'fax',
         'email'
     ];
+
+    public function getContactedPersonWithTitleAttribute()
+    {
+        return $this->title.' '.$this->contacted_person;
+    }
 }
