@@ -31,6 +31,8 @@ class ProductForm extends Component
         'qty'=> 'required|max:99999.99|numeric',
         'unit_price'=> 'nullable|max:999999.99|numeric',
         'organic'=> 'nullable|boolean',
+        'asc_id'=> 'required',
+        'gs_id'=> 'required',
         'transport'=> 'nullable|boolean',
     ];
 
@@ -77,6 +79,9 @@ class ProductForm extends Component
             'gs_id' =>  $this->gs_id,
             'user_id' => auth()->user()->id
         ]);
+        session()->flash('message', 'Post successfully updated.');
+
+        return redirect()->to('/myshop');
 
     }
 
