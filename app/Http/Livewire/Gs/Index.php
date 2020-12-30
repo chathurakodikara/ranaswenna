@@ -14,13 +14,14 @@ class Index extends Component
 
     public function search($search)
     {
-        $this->search =$search;
+        $this->search = $search;
     }
 
     public function render()
     {
-        $gss = Gs::where('name', 'LIKE', '%'.$this->search.'%' )
-                                ->paginate(10);
+        $gss = Gs::whereHas('asc', function($query){
+            $query->where('name','like', '%'. $this->search.'%');
+        })->with('asc')->orWhere('name','LIKE', '%'.$this->search.'%')->paginate(10);
 
         return view('livewire.gs.index',[
             'gss' => $gss
