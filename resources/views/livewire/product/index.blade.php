@@ -42,7 +42,7 @@
 
                                         <td class="font-medium"> {{$product->id}}</td>
                                         <td>
-                                            {{$product->items_id}}
+                                            {{$product->item->name}}
                                         </td>
                                         <td>
                                             {{$product->farmer->name}}</td>
