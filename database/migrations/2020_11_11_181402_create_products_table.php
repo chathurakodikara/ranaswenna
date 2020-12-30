@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('items_id');
+            $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('farmer_id');
             $table->string('description')->nullable();
             $table->float('qty',8);
@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->unsignedTinyInteger('asc_id');
             $table->unsignedTinyInteger('gs_id');
             $table->string('status', 12)->nullable();
-            $table->unsignedBigInteger('user_id');  
+            $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
         });
