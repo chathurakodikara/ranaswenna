@@ -19,11 +19,11 @@ class Index extends Component
         $this->search = $search;
     }
 
-    public function editFarmer($id)
-    {
-        // $this->neweditfarmer = true;
-        $this->emitTo('farmer.edit-farmer','farmer', $id);
-    }
+    // public function editFarmer($id)
+    // {
+    //     // $this->neweditfarmer = true;
+    //     $this->emitTo('farmer.edit-farmer','farmer', $id);
+    // }
 
     public function render()
     {

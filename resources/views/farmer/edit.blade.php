@@ -7,9 +7,7 @@
                     infomation Update
                 </h3>
 
-                <livewire:farmer.edit-farmer >
-
-
+                <livewire:farmer.edit-farmer>
 
             </div>
         </div>
